@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     print("3.times = \(3.times())")
     3.times { print("Print index: \($0)") }
     3.times { print("Print single line") }
+    
+    let range = 3...5
+    print(Array(range.reverse()))
   }
   
   func tryRubifiedString() {

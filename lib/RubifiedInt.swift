@@ -9,29 +9,66 @@
 import Foundation
 
 extension Int {
-  func times(callback: (Int -> Void)? = nil) -> [Int] {
+  typealias CallbackWithIndex = Int -> Void
+  typealias CallbackWithoutIndex = Void -> Void
+  
+  func times(callback: CallbackWithIndex? = nil) -> [Int] {
     if self <= 0 {
       return []
     }
     
-    let range = 0..<self
-    
-    if callback != nil {
-      for index in range { callback!(index) }
-    }
-    
-    return [Int](range)
+    return self._arrayFrom(0, to: self-1, indexCallback: callback)
   }
   
-  func times(callback: (Void -> Void)?) -> [Int] {
+  func times(callback: CallbackWithoutIndex?) -> [Int] {
     if self <= 0 {
       return []
     }
     
-    let range = 0..<self
+    return self._arrayFrom(0, to: self-1, nonIndexCallback: callback)
+  }
+  
+  func upTo(index: Int, callback: CallbackWithIndex? = nil) -> [Int] {
+    if index < self {
+      return []
+    }
     
-    if callback != nil {
-      for _ in range { callback!() }
+    return self._arrayFrom(self, to: index, indexCallback: callback)
+  }
+  
+  func upTo(index: Int, callback: CallbackWithoutIndex? = nil) -> [Int] {
+    if index < self {
+      return []
+    }
+    
+    return self._arrayFrom(self, to: index, nonIndexCallback: callback)
+  }
+  
+  func downTo(index: Int, callback: CallbackWithIndex? = nil) -> [Int] {
+    if index >= self {
+      return []
+    }
+    
+    return self._arrayFrom(self, to: index, indexCallback: callback)
+  }
+  
+  func downTo(index: Int, callback: CallbackWithoutIndex? = nil) -> [Int] {
+    if index < self {
+      return []
+    }
+    
+    return self._arrayFrom(self, to: index, nonIndexCallback: callback)
+  }
+  
+  private func _arrayFrom(from: Int,
+                          to: Int,
+                          indexCallback: CallbackWithIndex? = nil,
+                          nonIndexCallback: CallbackWithoutIndex? = nil) -> [Int] {
+    let range = from...to
+    
+    for index in range {
+      if indexCallback != nil { indexCallback!(index) }
+      if nonIndexCallback != nil { nonIndexCallback!() }
     }
     
     return [Int](range)
