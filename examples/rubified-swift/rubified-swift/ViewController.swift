@@ -15,8 +15,9 @@ class ViewController: UIViewController {
   }
   
   func tryRubified() {
-    self.tryRubifiedInt()
-    self.tryRubifiedArray()
+//    self.tryRubifiedInt()
+    self.tryRubifiedDouble()
+//    self.tryRubifiedArray()
   }
   
   func tryRubifiedInt() {
@@ -31,6 +32,24 @@ class ViewController: UIViewController {
     print("Down to:")
     print("\t3.downTo(1) = \(3.downTo(1))")
     3.downTo(1) { print("\tPrint without index") }
+  }
+  
+  func tryRubifiedDouble() {
+    print("Time:")
+    print("\t7 seconds = \(7.seconds()) seconds")
+    print("\t6 minutes = \(6.minutes()) seconds")
+    print("\t5 hours = \(5.hours()) seconds")
+    print("\t4 days = \(4.days()) seconds")
+    print("\t3 weeks = \(3.weeks()) seconds")
+    print("\t2 months = \(2.months()) seconds")
+    print("\t1 years = \(1.years()) seconds")
+    
+    let time = 3.hours().ago()
+    
+    print("\t3 hours ago: \(3.hours().ago())")
+    print("\t3 hours since now: \(3.hours().sinceNow())")
+    print("\t3 hours until \(time): \(3.hours().until(time))")
+    print("\t3 hours since \(time): \(3.hours().since(time))")
   }
   
   func tryRubifiedArray() {

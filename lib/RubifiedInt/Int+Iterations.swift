@@ -1,5 +1,5 @@
 //
-//  RubifiedInt.swift
+//  Int+Iterations.swift
 //  rubified-swift
 //
 //  Created by Ethan Nguyen on 7/22/16.
@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Iteration extensions
 extension Int {
   typealias CallbackWithoutIndex = Void -> Void
   
@@ -35,13 +36,13 @@ extension Int {
     return self._arrayFrom(self, to: index-1, callback: callback)
   }
   
+  // Private methods
+  
   private func _arrayFrom(from: Int, to: Int, callback: CallbackWithoutIndex!) -> [Int] {
     let step = from <= to ? 1 : -1
     let range = from.stride(to: to, by: step)
     
-    if callback != nil {
-      for _ in range { callback() }
-    }
+    if callback != nil { for _ in range { callback() } }
     
     return [Int](range)
   }

@@ -12,8 +12,11 @@
 		CA788D861D4205C0009232C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D841D4205C0009232C3 /* Main.storyboard */; };
 		CA788D881D4205C0009232C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA788D871D4205C0009232C3 /* Assets.xcassets */; };
 		CA788D8B1D4205C0009232C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D891D4205C0009232C3 /* LaunchScreen.storyboard */; };
-		CA788D961D42068F009232C3 /* RubifiedInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D951D42068F009232C3 /* RubifiedInt.swift */; };
-		CA788D981D431333009232C3 /* RubifiedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D971D431333009232C3 /* RubifiedArray.swift */; };
+		CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA31D431CA4009232C3 /* Array+Iterations.swift */; };
+		CA788DA71D431CA4009232C3 /* Int+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA51D431CA4009232C3 /* Int+Iterations.swift */; };
+		CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA81D431CB9009232C3 /* Int+Numerics.swift */; };
+		CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DAA1D431D38009232C3 /* Int+Time.swift */; };
+		CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB01D4321EE009232C3 /* Double+Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +27,11 @@
 		CA788D871D4205C0009232C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA788D8A1D4205C0009232C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA788D8C1D4205C0009232C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA788D951D42068F009232C3 /* RubifiedInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RubifiedInt.swift; path = ../../../lib/RubifiedInt.swift; sourceTree = "<group>"; };
-		CA788D971D431333009232C3 /* RubifiedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RubifiedArray.swift; path = ../../../lib/RubifiedArray.swift; sourceTree = "<group>"; };
+		CA788DA31D431CA4009232C3 /* Array+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Iterations.swift"; sourceTree = "<group>"; };
+		CA788DA51D431CA4009232C3 /* Int+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Iterations.swift"; sourceTree = "<group>"; };
+		CA788DA81D431CB9009232C3 /* Int+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Numerics.swift"; sourceTree = "<group>"; };
+		CA788DAA1D431D38009232C3 /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
+		CA788DB01D4321EE009232C3 /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,7 @@
 		CA788D7F1D4205C0009232C3 /* rubified-swift */ = {
 			isa = PBXGroup;
 			children = (
-				CA788D941D420676009232C3 /* lib */,
+				CA788DA11D431CA4009232C3 /* lib */,
 				CA788D801D4205C0009232C3 /* AppDelegate.swift */,
 				CA788D821D4205C0009232C3 /* ViewController.swift */,
 				CA788D841D4205C0009232C3 /* Main.storyboard */,
@@ -69,13 +75,41 @@
 			path = "rubified-swift";
 			sourceTree = "<group>";
 		};
-		CA788D941D420676009232C3 /* lib */ = {
+		CA788DA11D431CA4009232C3 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				CA788D971D431333009232C3 /* RubifiedArray.swift */,
-				CA788D951D42068F009232C3 /* RubifiedInt.swift */,
+				CA788DA21D431CA4009232C3 /* RubifiedArray */,
+				CA788DAF1D4321EE009232C3 /* RubifiedDouble */,
+				CA788DA41D431CA4009232C3 /* RubifiedInt */,
 			);
 			name = lib;
+			path = ../../../lib;
+			sourceTree = "<group>";
+		};
+		CA788DA21D431CA4009232C3 /* RubifiedArray */ = {
+			isa = PBXGroup;
+			children = (
+				CA788DA31D431CA4009232C3 /* Array+Iterations.swift */,
+			);
+			path = RubifiedArray;
+			sourceTree = "<group>";
+		};
+		CA788DA41D431CA4009232C3 /* RubifiedInt */ = {
+			isa = PBXGroup;
+			children = (
+				CA788DA51D431CA4009232C3 /* Int+Iterations.swift */,
+				CA788DA81D431CB9009232C3 /* Int+Numerics.swift */,
+				CA788DAA1D431D38009232C3 /* Int+Time.swift */,
+			);
+			path = RubifiedInt;
+			sourceTree = "<group>";
+		};
+		CA788DAF1D4321EE009232C3 /* RubifiedDouble */ = {
+			isa = PBXGroup;
+			children = (
+				CA788DB01D4321EE009232C3 /* Double+Time.swift */,
+			);
+			path = RubifiedDouble;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA788D961D42068F009232C3 /* RubifiedInt.swift in Sources */,
+				CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */,
+				CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
+				CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */,
+				CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,
-				CA788D981D431333009232C3 /* RubifiedArray.swift in Sources */,
+				CA788DA71D431CA4009232C3 /* Int+Iterations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
