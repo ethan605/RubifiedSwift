@@ -13,6 +13,7 @@
 		CA788D881D4205C0009232C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA788D871D4205C0009232C3 /* Assets.xcassets */; };
 		CA788D8B1D4205C0009232C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D891D4205C0009232C3 /* LaunchScreen.storyboard */; };
 		CA788D961D42068F009232C3 /* RubifiedInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D951D42068F009232C3 /* RubifiedInt.swift */; };
+		CA788D981D431333009232C3 /* RubifiedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D971D431333009232C3 /* RubifiedArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CA788D8A1D4205C0009232C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA788D8C1D4205C0009232C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA788D951D42068F009232C3 /* RubifiedInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RubifiedInt.swift; path = ../../../lib/RubifiedInt.swift; sourceTree = "<group>"; };
+		CA788D971D431333009232C3 /* RubifiedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RubifiedArray.swift; path = ../../../lib/RubifiedArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		CA788D941D420676009232C3 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				CA788D971D431333009232C3 /* RubifiedArray.swift */,
 				CA788D951D42068F009232C3 /* RubifiedInt.swift */,
 			);
 			name = lib;
@@ -149,6 +152,7 @@
 				CA788D961D42068F009232C3 /* RubifiedInt.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,
+				CA788D981D431333009232C3 /* RubifiedArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
