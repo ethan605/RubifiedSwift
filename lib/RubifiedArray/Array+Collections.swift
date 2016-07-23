@@ -9,12 +9,33 @@
 import Foundation
 
 // Collection extensions
-extension Array {
-  func compact() -> [Element] {
-    return self.filter { $0 != nil && !($0 is NSNull) }
+protocol OptionalType {
+  associatedtype W
+  var optional: W? { get }
+}
+
+extension Optional: OptionalType {
+  typealias W = Wrapped
+  var optional: W? { return self }
+}
+
+extension Array where Element: OptionalType {
+  func unwrap() -> [Element.W]? {
+    let initial = Optional<[Element.W]>([])
+    
+    return reduce(initial) { reduced, element in
+      reduced.flatMap { arr in
+        element.optional.map { arr + [$0] }
+      }
+    }
+  }
+  
+  func compact() -> [Element.W] {
+    let compacted = self.filter { $0.optional != nil }
+    return compacted.unwrap()!
   }
   
   mutating func compact$() {
-    self = self.compact()
+    self = self.compact().map { $0 as! Element }
   }
 }

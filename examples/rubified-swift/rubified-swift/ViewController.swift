@@ -16,8 +16,8 @@ class ViewController: UIViewController {
   
   func tryRubified() {
 //    self.tryRubifiedInt()
-    self.tryRubifiedDouble()
-//    self.tryRubifiedArray()
+//    self.tryRubifiedDouble()
+    self.tryRubifiedArray()
   }
   
   func tryRubifiedInt() {
@@ -61,5 +61,13 @@ class ViewController: UIViewController {
     
     print("Down to with index:")
     3.downTo(1).withIndex { print("\tPrint with index: \($0)") }
+    
+    print("Compact:")
+    let nilValue: String? = nil
+    var array: [AnyObject?] = [1, 2, "3", nil, [4], nilValue, ["5": 5], nil]
+    
+    print("\tCompacted array: \(array.compact())")
+    array.compact$()
+    print("\tCompacted array (mutate): \(array)")
   }
 }
