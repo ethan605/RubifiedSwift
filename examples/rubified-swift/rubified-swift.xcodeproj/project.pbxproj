@@ -17,6 +17,7 @@
 		CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA81D431CB9009232C3 /* Int+Numerics.swift */; };
 		CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DAA1D431D38009232C3 /* Int+Time.swift */; };
 		CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB01D4321EE009232C3 /* Double+Time.swift */; };
+		CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB21D43269B009232C3 /* Array+Collections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CA788DA81D431CB9009232C3 /* Int+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Numerics.swift"; sourceTree = "<group>"; };
 		CA788DAA1D431D38009232C3 /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
 		CA788DB01D4321EE009232C3 /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
+		CA788DB21D43269B009232C3 /* Array+Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Collections.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				CA788DA31D431CA4009232C3 /* Array+Iterations.swift */,
+				CA788DB21D43269B009232C3 /* Array+Collections.swift */,
 			);
 			path = RubifiedArray;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */,
 				CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
+				CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */,
 				CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */,
 				CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,
