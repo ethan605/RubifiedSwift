@@ -20,12 +20,17 @@ class ViewController: UIViewController {
   }
   
   func tryRubifiedInt() {
-    print("3.times = \(3.times())")
-    3.times { print("Print index: \($0)") }
-    3.times { print("Print single line") }
+    print("Times:")
+    print("\t3.times() = \(3.times())")
+    3.times { print("\tPrint single line") }
     
-    let range = 3...5
-    print(Array(range.reverse()))
+    print("Up to:")
+    print("\t3.upTo(5) = \(3.upTo(5))")
+    3.upTo(5) { print("\tPrint single line") }
+    
+    print("Down to:")
+    print("\t3.downTo(1) = \(3.downTo(1))")
+    3.downTo(1) { print("\tPrint single line") }
   }
   
   func tryRubifiedString() {

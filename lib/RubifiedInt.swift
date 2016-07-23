@@ -9,66 +9,38 @@
 import Foundation
 
 extension Int {
-  typealias CallbackWithIndex = Int -> Void
   typealias CallbackWithoutIndex = Void -> Void
   
-  func times(callback: CallbackWithIndex? = nil) -> [Int] {
+  func times(callback: CallbackWithoutIndex? = nil) -> [Int] {
     if self <= 0 {
       return []
     }
     
-    return self._arrayFrom(0, to: self-1, indexCallback: callback)
+    return self._arrayFrom(0, to: self, callback: callback)
   }
-  
-  func times(callback: CallbackWithoutIndex?) -> [Int] {
-    if self <= 0 {
-      return []
-    }
-    
-    return self._arrayFrom(0, to: self-1, nonIndexCallback: callback)
-  }
-  
-  func upTo(index: Int, callback: CallbackWithIndex? = nil) -> [Int] {
+
+  func upTo(index: Int, nonIndexCallback callback: CallbackWithoutIndex? = nil) -> [Int] {
     if index < self {
       return []
     }
     
-    return self._arrayFrom(self, to: index, indexCallback: callback)
+    return self._arrayFrom(self, to: index+1, callback: callback)
   }
   
-  func upTo(index: Int, callback: CallbackWithoutIndex? = nil) -> [Int] {
-    if index < self {
-      return []
-    }
-    
-    return self._arrayFrom(self, to: index, nonIndexCallback: callback)
-  }
-  
-  func downTo(index: Int, callback: CallbackWithIndex? = nil) -> [Int] {
+  func downTo(index: Int, nonIndexCallback callback: CallbackWithoutIndex? = nil) -> [Int] {
     if index >= self {
       return []
     }
     
-    return self._arrayFrom(self, to: index, indexCallback: callback)
+    return self._arrayFrom(self, to: index-1, callback: callback)
   }
   
-  func downTo(index: Int, callback: CallbackWithoutIndex? = nil) -> [Int] {
-    if index < self {
-      return []
-    }
+  private func _arrayFrom(from: Int, to: Int, callback: CallbackWithoutIndex!) -> [Int] {
+    let step = from <= to ? 1 : -1
+    let range = from.stride(to: to, by: step)
     
-    return self._arrayFrom(self, to: index, nonIndexCallback: callback)
-  }
-  
-  private func _arrayFrom(from: Int,
-                          to: Int,
-                          indexCallback: CallbackWithIndex? = nil,
-                          nonIndexCallback: CallbackWithoutIndex? = nil) -> [Int] {
-    let range = from...to
-    
-    for index in range {
-      if indexCallback != nil { indexCallback!(index) }
-      if nonIndexCallback != nil { nonIndexCallback!() }
+    if callback != nil {
+      for _ in range { callback() }
     }
     
     return [Int](range)
