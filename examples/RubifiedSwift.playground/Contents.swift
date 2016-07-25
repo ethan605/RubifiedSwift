@@ -1,14 +1,7 @@
-//
-//  Array+Collections.swift
-//  rubified-swift
-//
-//  Created by Ethan Nguyen on 7/23/16.
-//  Copyright © 2016 Thanh Nguyen. All rights reserved.
-//
+//: Playground - noun: a place where people can play
 
 import Foundation
 
-// Collection extensions
 protocol OptionalType {
   associatedtype W
   var optional: W? { get }
@@ -54,3 +47,17 @@ extension Array where Element: OptionalType {
     self = self.compact()
   }
 }
+
+let sub1 = [4, 5]
+let sub2: [AnyObject?] = [8, nil]
+let sub4: [AnyObject?] = [nil]
+let sub3: [Any?] = [7, sub2, [9], sub4]
+var arr: [Any?] = [1, 2, sub1, "6", sub3, nil]
+
+print(arr.unwrap())
+print(arr.compact())
+//arr.compact$()
+//print(arr)
+
+//var pureArray: [[Double]] = [[1], [2, 3], [4]]
+//print([Double](pureArray.flatten()))
