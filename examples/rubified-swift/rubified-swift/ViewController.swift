@@ -63,9 +63,13 @@ class ViewController: UIViewController {
     3.downTo(1).withIndex { print("\tPrint with index: \($0)") }
     
     print("Compact:")
-    let nilValue: String? = nil
-    var array: [AnyObject?] = [1, 2, "3", nil, [4], nilValue, ["5": 5], nil]
+    let sub1 = [4, 5]
+    let sub2: [Any?] = [8, nil]
+    let sub3: [Any?] = [nil]
+    let sub4: [Any?] = [7, sub2, [9], sub3]
+    var array: [Any?] = [1, 2, sub1, 6, sub4, nil]
     
+    print("\tUnwrapped array: \(array.unwrap())")
     print("\tCompacted array: \(array.compact())")
     array.compact$()
     print("\tCompacted array (mutate): \(array)")

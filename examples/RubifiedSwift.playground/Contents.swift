@@ -2,21 +2,21 @@
 
 import Foundation
 
+// Collection extensions
 protocol OptionalType {
-  associatedtype W
-  var optional: W? { get }
+  associatedtype Wrapped
+  var optional: Wrapped? { get }
 }
 
 extension Optional: OptionalType {
-  typealias W = Wrapped
-  var optional: W? { return self }
+  var optional: Wrapped? { return self }
 }
 
 extension Array where Element: OptionalType {
-  func unwrap() -> [Element.W] {
-    let initial = Optional<[Element.W]>([])
+  func unwrap() -> [Element.Wrapped] {
+    let initial = Optional<[Element.Wrapped]>([])
     
-    let unwrapped = reduce(initial) { reduced, element in
+    let unwrapped = reduce(initial) { (reduced, element) in
       var reduced = reduced
       
       if let optionalElement = element.optional {
@@ -32,7 +32,7 @@ extension Array where Element: OptionalType {
   func compact() -> [Element] {
     let initial = [Element]()
     
-    return reduce(initial) { reduced, element in
+    return reduce(initial) { (reduced, element) in
       var reduced = reduced
       
       if let optionalElement = element.optional {
@@ -49,15 +49,12 @@ extension Array where Element: OptionalType {
 }
 
 let sub1 = [4, 5]
-let sub2: [AnyObject?] = [8, nil]
-let sub4: [AnyObject?] = [nil]
-let sub3: [Any?] = [7, sub2, [9], sub4]
-var arr: [Any?] = [1, 2, sub1, "6", sub3, nil]
+let sub2: [Any?] = [8, nil]
+let sub3: [Any?] = [nil]
+let sub4: [Any?] = [7, nil, [9], sub3]
+var array: [Any?] = [1, 2, sub1, 6, sub4, nil]
 
-print(arr.unwrap())
-print(arr.compact())
-//arr.compact$()
-//print(arr)
-
-//var pureArray: [[Double]] = [[1], [2, 3], [4]]
-//print([Double](pureArray.flatten()))
+print(array.unwrap())
+print(array.compact())
+array.compact$()
+print(array)
