@@ -8,25 +8,40 @@
 
 import Foundation
 
-func <<<T>(inout array: Array<T>, newElement: T) {
+// Push operation: array << newElement
+public func <<<T>(inout array: Array<T>, newElement: T) {
   array.append(newElement)
 }
 
-func -<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
-  return lhs.filter { !rhs.contains($0) }
-}
-
-func &<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
-  return lhs.filter { rhs.contains($0) }
-}
-
-func |<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
+// Union operation: lhs | rhs
+public func |<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
   return lhs + (rhs - lhs)
 }
 
-func *<T: Hashable>(array: Array<T>, mult: Int) -> Array<T> {
+// Intersection operation: lhs & rhs
+public func &<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
+  return lhs.filter { rhs.contains($0) }
+}
+
+// Complement operation: lhs - rhs
+public func -<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
+  return lhs.filter { !rhs.contains($0) }
+}
+
+// Symmetric-difference operation: lhs ^ rhs
+public func ^<T: Hashable>(lhs: Array<T>, rhs: Array<T>) -> Array<T> {
+  return (lhs - rhs) + (rhs - lhs)
+}
+
+// Catersian product
+public func *<T>(lhs: Array<T>, rhs: Array<T>) -> Array<Array<T>> {
+  return lhs.map { (lhe) in rhs.map { [lhe, $0] } }.reduce([], combine:+)
+}
+
+// Scala product
+public func *<T: Hashable>(array: Array<T>, mult: Int) -> Array<T> {
   if mult < 0 {
-    fatalError("Negative argument")
+    fatalError("Negative multiplication factor")
   }
   
   var result = Array<T>()
@@ -36,6 +51,7 @@ func *<T: Hashable>(array: Array<T>, mult: Int) -> Array<T> {
   return result
 }
 
-func *<T: Hashable>(array: Array<T>, separator: String) -> String {
+// String join
+public func *<T: Hashable>(array: Array<T>, separator: String) -> String {
   return array.map { String($0) }.joinWithSeparator(separator)
 }

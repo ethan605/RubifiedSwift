@@ -9,14 +9,10 @@
 import Foundation
 
 extension Array {
-  typealias CallbackWithIndex = (Element, Int) -> Void
+  public typealias CallbackWithIndex = (Element, Int) -> Void
   
-  func withIndex(callback: CallbackWithIndex) {
+  public func withIndex(callback: CallbackWithIndex) {
     var index = -1
-    
-    self.forEach {
-      index += 1
-      callback($0, index)
-    }
+    self.forEach { index += 1; callback($0, index) }
   }
 }

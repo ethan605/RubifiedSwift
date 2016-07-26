@@ -9,43 +9,41 @@
 import Foundation
 
 // Collection extensions
-protocol OptionalType {
+public protocol OptionalType {
   associatedtype Wrapped
   var optional: Wrapped? { get }
 }
 
 extension Optional: OptionalType {
-  var optional: Wrapped? { return self }
+  public var optional: Wrapped? { return self }
 }
 
 extension Array where Element: OptionalType {
-  func unwrap() -> [Element.Wrapped] {
+  public func unwrapped() -> [Element.Wrapped]? {
     let initial = Optional<[Element.Wrapped]>([])
     
-    let unwrapped = reduce(initial) { (reduced, element) in
-      var reduced = reduced
-      
-      if let optionalElement = element.optional {
-        reduced?.append(optionalElement)
+    return self.reduce(initial) { (reduced, element) in
+      element.optional.map { (unwrappedElement) in
+        if let subArray = unwrappedElement as? Array {
+          return reduced! + (subArray.unwrapped() ?? [])
+        } else {
+          return reduced! + [unwrappedElement]
+        }
       }
-      
-      return reduced
     }
-    
-    return unwrapped!
   }
   
-  func compact() -> [Element] {
+  public func compact() -> [Element] {
     let initial = [Element]()
     
-    return reduce(initial) { (reduced, element) in
-      var reduced = reduced
-      
-      if let optionalElement = element.optional {
-        reduced.append(optionalElement as! Element)
+    return self.reduce(initial) { (reduced, element) in
+      if let unwrappedElement = element.optional {
+        if let subArray = unwrappedElement as? Array {
+          return reduced + subArray.compact()
+        }
       }
       
-      return reduced
+      return reduced + (element.optional == nil ? [] : [element])
     }
   }
   

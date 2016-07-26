@@ -69,8 +69,9 @@ class ViewController: UIViewController {
     let sub4: [Any?] = [7, sub2, [9], sub3]
     var array1: [Any?] = [1, 2, sub1, 6, sub4, nil]
     
-    print("\tUnwrapped array: \(array1.unwrap())")
+    print("\tUnwrapped array: \(array1.unwrapped())")
     print("\tCompacted array: \(array1.compact())")
+    print("\tCompacted & Unwrapped array: \(array1.compact().unwrapped())")
     array1.compact$()
     print("\tCompacted array (mutate): \(array1)")
     
@@ -99,12 +100,14 @@ class ViewController: UIViewController {
     let arr2 = [4, 6, 7, 8, 9]
     
     print("Operators:")
-    print("\t<<: \(arr1 << 9)")
-    print("\t-: \(arr1 - arr2)")
-    print("\t&: \(arr1 & arr2)")
-    print("\t|: \(arr1 | arr2)")
-    print("\t*4: \(arr1 * 4)")
-    print("\t*0: \(arr1 * 0)")
-    print("\t*', ': \(arr1 * ", ")")
+    print("\tPush (arr1 << 9): \(arr1 << 9)")
+    print("\tUnion (arr1 | arr2): \(arr1 | arr2)")
+    print("\tIntersect (arr1 & arr2): \(arr1 & arr2)")
+    print("\tComplement (arr1 - arr2): \(arr1 - arr2)")
+    print("\tSymmetric difference (arr1 ^ arr2): \(arr1 ^ arr2)")
+    print("\tCartesian product: \(arr1 * arr2)")
+    print("\tScala product (*4): \(arr1 * 4)")
+    print("\tScala product (*0): \(arr1 * 0)")
+    print("\tString join (*', '): \(arr1 * ", ")")
   }
 }
