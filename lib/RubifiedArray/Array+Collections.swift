@@ -40,6 +40,10 @@ extension Array {
     return self.removeAtIndex(0)
   }
   
+  public func join(separator: String = "") -> String {
+    return self.map { String($0) }.joinWithSeparator(separator)
+  }
+  
   public mutating func map$(callback: Element -> Element) {
     self = self.map(callback)
   }
@@ -114,6 +118,22 @@ extension Array where Element: OptionalType {
   
   public mutating func compact$() {
     self = self.compact()
+  }
+  
+  public func sample() -> Element? {
+    return self.isEmpty ? nil : self[Int(arc4random()) % self.count]
+  }
+  
+  public func shuffle(repeats: Int = 1) -> [Element] {
+    if self.isEmpty { return [] }
+    return [Int](0..<repeats).reduce([Element]()) { (_, _) in
+      self.sort { (_, _) in arc4random() < arc4random() }
+    }
+  }
+  
+  public mutating func shuffle$(repeatTime: Int = 1) -> [Element] {
+    self = self.shuffle()
+    return self
   }
 }
 

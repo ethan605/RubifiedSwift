@@ -16,7 +16,7 @@ public func <<<T>(inout array: [T], newElement: T) -> [T] {
 
 // Union operation: lhs | rhs
 public func |<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
-  return lhs + (rhs - lhs)
+  return lhs + lhs.filter { !rhs.contains($0) }
 }
 
 // Intersection operation: lhs & rhs
@@ -31,7 +31,7 @@ public func -<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
 
 // Symmetric-difference operation: lhs ^ rhs
 public func ^<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
-  return (lhs - rhs) + (rhs - lhs)
+  return lhs.filter { !rhs.contains($0) } + rhs.filter { !lhs.contains($0) }
 }
 
 // Catersian product
