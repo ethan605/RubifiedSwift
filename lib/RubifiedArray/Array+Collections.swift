@@ -9,6 +9,71 @@
 import Foundation
 
 // Collection extensions
+
+// Normal elements
+extension Array {
+  public func at(idx: Int) -> Element? {
+    if idx > self.count || idx < -self.count { return nil }
+    
+    var absIdx = idx
+    if idx < 0 { absIdx += self.count }
+    
+    return self[absIdx]
+  }
+  
+  public mutating func push(newElement: Element) -> [Element] {
+    self.append(newElement)
+    return self
+  }
+  
+  public mutating func unshift(newElement: Element) -> [Element] {
+    self.insert(newElement, atIndex: 0)
+    return self
+  }
+  
+  public mutating func pop() -> Element? {
+    return self.popLast()
+  }
+  
+  public mutating func shift() -> Element? {
+    if self.count == 0 { return nil }
+    return self.removeAtIndex(0)
+  }
+  
+  public mutating func map$(callback: Element -> Element) {
+    self = self.map(callback)
+  }
+  
+  public func select(callback: Element -> Bool) -> [Element] {
+    return self.filter(callback)
+  }
+  
+  public mutating func select$(callback: Element -> Bool) {
+    self = self.filter(callback)
+  }
+  
+  public func reject(callback: Element -> Bool) -> [Element] {
+    return self.filter { !callback($0) }
+  }
+  
+  public mutating func reject$(callback: Element -> Bool) {
+    self = self.filter { !callback($0) }
+  }
+  
+  public mutating func deleteIf(callback: Element -> Bool) {
+    var indices = [Int]()
+    self.withIndex { if callback($0) { indices.append($1) } }
+    for index in indices.reverse() { self.removeAtIndex(index) }
+  }
+  
+  public mutating func keepIf(callback: Element -> Bool) {
+    var indices = [Int]()
+    self.withIndex { if !callback($0) { indices.append($1) } }
+    for index in indices.reverse() { self.removeAtIndex(index) }
+  }
+}
+
+// Optional elements
 public protocol OptionalType {
   associatedtype Wrapped
   var optional: Wrapped? { get }
@@ -47,40 +112,37 @@ extension Array where Element: OptionalType {
     }
   }
   
-  mutating func compact$() {
+  public mutating func compact$() {
     self = self.compact()
   }
 }
 
-extension Array where Element: Hashable {
-  func uniq() -> [Element] {
+// Equatable elements
+extension Array where Element: Equatable {
+  public func uniq() -> [Element] {
     return self.reduce([Element]()) { (reduced, element) in
-      var reduced = reduced
-      if !reduced.contains(element) { reduced.append(element) }
-      return reduced
+      reduced + (reduced.contains(element) ? [] : [element])
     }
   }
   
-  mutating func uniq$() {
+  public mutating func uniq$() {
     self = self.uniq()
   }
-}
-
-extension Array where Element: Equatable {
-  mutating func delete(element: Element) -> Element? {
+  
+  public mutating func delete(element: Element) -> Element? {
     let originalLength = self.count
     self = self.filter { $0 != element }
     return (originalLength == self.count ? nil : element)
   }
 }
 
+// Array elements
 extension Array where Element: _ArrayType {
   // Transpose m*n matrix to n*m matrix
-  func transpose() -> [[Element.Generator.Element]] {
-    let zero = Element.Index.Distance(0)
-    let elementSize = self.map { $0.count }.reduce(zero) { $0 == zero || $0 == $1 ? $1 : zero } as! Int
-    
-    if elementSize == 0 { fatalError("Element sizes mismatched") }
-    return [Int](0..<elementSize).map { (index) in self.map { $0[index] } }
+  public func transpose() -> [[Element.Generator.Element]] {
+    // Map and check if all elements' sizes are identical
+    let size = self.map { $0.count }.reduce(0) { $0 == 0 || $0 == $1 ? $1 : 0 }
+    if size == 0 { fatalError("Element sizes mismatched") }
+    return [Int](0..<size).map { (idx) in self.map { $0[idx] } }
   }
 }

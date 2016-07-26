@@ -9,73 +9,38 @@
 import Foundation
 
 extension Double {
-  func seconds() -> NSTimeInterval {
-    return NSTimeInterval(self)
-  }
+  // Unit conversions
+  public func seconds() -> NSTimeInterval { return NSTimeInterval(self) }
+  public func minutes() -> NSTimeInterval { return (60 * self).seconds() }
+  public func hours() -> NSTimeInterval { return (60 * self).minutes() }
+  public func days() -> NSTimeInterval { return (24 * self).hours() }
+  public func weeks() -> NSTimeInterval { return (7 * self).days() }
+  public func months() -> NSTimeInterval { return (30 * self).days() }
+  public func years() -> NSTimeInterval { return (365 * self).days() }
   
-  func minutes() -> NSTimeInterval {
-    return (60 * self).seconds()
-  }
+  // Aliases
+  public func second() -> NSTimeInterval { return self.seconds() }
+  public func minute() -> NSTimeInterval { return self.minutes() }
+  public func hour() -> NSTimeInterval { return self.hours() }
+  public func day() -> NSTimeInterval { return self.days() }
+  public func week() -> NSTimeInterval { return self.weeks() }
+  public func month() -> NSTimeInterval { return self.months() }
+  public func year() -> NSTimeInterval { return self.years() }
   
-  func hours() -> NSTimeInterval {
-    return (60 * self).minutes()
-  }
-  
-  func days() -> NSTimeInterval {
-    return (24 * self).hours()
-  }
-  
-  func weeks() -> NSTimeInterval {
-    return (7 * self).days()
-  }
-  
-  func months() -> NSTimeInterval {
-    return (30 * self).days()
-  }
-  
-  func years() -> NSTimeInterval {
-    return (365 * self).days()
-  }
-  
-  func until(date: NSDate = NSDate()) -> NSDate {
+  // Date conversions
+  public func until(date: NSDate = NSDate()) -> NSDate {
     return NSDate(timeInterval: -self.seconds(), sinceDate: date)
   }
   
-  func ago() -> NSDate {
+  public func ago() -> NSDate {
     return NSDate(timeIntervalSinceNow: -self.seconds())
   }
   
-  func since(date: NSDate = NSDate()) -> NSDate {
+  public func since(date: NSDate = NSDate()) -> NSDate {
     return NSDate(timeInterval: self.seconds(), sinceDate: date)
   }
   
-  func sinceNow() -> NSDate {
+  public func sinceNow() -> NSDate {
     return NSDate(timeIntervalSinceNow: self.seconds())
-  }
-  
-  // Aliases
-  
-  func second() -> NSTimeInterval {
-    return self.seconds()
-  }
-  
-  func minute() -> NSTimeInterval {
-    return self.minutes()
-  }
-  
-  func hour() -> NSTimeInterval {
-    return self.hours()
-  }
-  
-  func week() -> NSTimeInterval {
-    return self.weeks()
-  }
-  
-  func month() -> NSTimeInterval {
-    return self.months()
-  }
-  
-  func year() -> NSTimeInterval {
-    return self.years()
   }
 }

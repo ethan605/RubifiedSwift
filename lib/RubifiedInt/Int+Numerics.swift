@@ -10,39 +10,17 @@ import Foundation
 
 // Numeric extensions
 extension Int {
-  func next() -> Int {
-    return self + 1
-  }
+  public func abs() -> UInt { return self > 0 ? UInt(self) : UInt(-self) }
   
-  func pred() -> Int {
-    return self - 1
-  }
+  public func next() -> Int { return self + 1 }
+  public func pred() -> Int { return self - 1 }
   
-  func toS(base: Int = 10, upperCase: Bool = false) -> String {
+  public func toS(base: Int = 10, upperCase: Bool = false) -> String {
     let string = String(self, radix: base)
-    
-    if upperCase { return string.uppercaseString }
-    else { return string }
+    return upperCase ? string.uppercaseString : string
   }
   
-  func toF() -> Double {
-    return Double(self)
-  }
-  
-  func isZero() -> Bool {
-    return self == 0
-  }
-  
-  func isEven() -> Bool {
-    return self % 2 == 0
-  }
-  
-  func isOdd() -> Bool {
-    return self % 2 == 1
-  }
-  
-  func abs() -> UInt {
-    if self > 0 { return UInt(self) }
-    return UInt(-self)
-  }
+  public func toF() -> Double { return Double(self) }
+  public func isEven() -> Bool { return self % 2 == 0 }
+  public func isOdd() -> Bool { return self % 2 == 1 }
 }

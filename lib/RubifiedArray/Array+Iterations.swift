@@ -12,7 +12,7 @@ extension Array {
   public typealias CallbackWithIndex = (Element, Int) -> Void
   
   public func withIndex(callback: CallbackWithIndex) {
-    var index = -1
-    self.forEach { index += 1; callback($0, index) }
+    var idx = -1
+    self.forEach { idx += 1; callback($0, idx) }
   }
 }

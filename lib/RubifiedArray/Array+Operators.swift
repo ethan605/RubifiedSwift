@@ -15,44 +15,37 @@ public func <<<T>(inout array: [T], newElement: T) -> [T] {
 }
 
 // Union operation: lhs | rhs
-public func |<T: Hashable>(lhs: [T], rhs: [T]) -> [T] {
+public func |<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
   return lhs + (rhs - lhs)
 }
 
 // Intersection operation: lhs & rhs
-public func &<T: Hashable>(lhs: [T], rhs: [T]) -> [T] {
+public func &<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
   return lhs.filter { rhs.contains($0) }
 }
 
 // Complement operation: lhs - rhs
-public func -<T: Hashable>(lhs: [T], rhs: [T]) -> [T] {
+public func -<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
   return lhs.filter { !rhs.contains($0) }
 }
 
 // Symmetric-difference operation: lhs ^ rhs
-public func ^<T: Hashable>(lhs: [T], rhs: [T]) -> [T] {
+public func ^<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
   return (lhs - rhs) + (rhs - lhs)
 }
 
 // Catersian product
 public func *<T>(lhs: [T], rhs: [T]) -> [[T]] {
-  return lhs.map { (lhe) in rhs.map { [lhe, $0] } }.reduce([], combine:+)
+  return lhs.map { (elm) in rhs.map { [elm, $0] } }.reduce([], combine:+)
 }
 
-// Scala product
-public func *<T: Hashable>(array: [T], mult: Int) -> [T] {
-  if mult < 0 {
-    fatalError("Negative multiplication factor")
-  }
-  
-  var result = [T]()
-  
-  for _ in 0..<mult { result += array }
-  
-  return result
+// Scalar product
+public func *<T>(array: [T], mult: Int) -> [T] {
+  if mult < 0 { fatalError("Negative multiplication factor") }
+  return [Int](0..<mult).reduce([T]()) { (r, _) in r + array }
 }
 
 // String join
-public func *<T: Hashable>(array: [T], separator: String) -> String {
+public func *<T>(array: [T], separator: String) -> String {
   return array.map { String($0) }.joinWithSeparator(separator)
 }

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA3BB5851D46164800506422 /* Array+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3BB5841D46164800506422 /* Array+Elements.swift */; };
 		CA3BB5871D46177D00506422 /* Array+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3BB5861D46177D00506422 /* Array+Operators.swift */; };
+		CA3BB5891D475F1A00506422 /* Double+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3BB5881D475F1A00506422 /* Double+Numerics.swift */; };
 		CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D801D4205C0009232C3 /* AppDelegate.swift */; };
 		CA788D831D4205C0009232C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D821D4205C0009232C3 /* ViewController.swift */; };
 		CA788D861D4205C0009232C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D841D4205C0009232C3 /* Main.storyboard */; };
@@ -23,8 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA3BB5841D46164800506422 /* Array+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Elements.swift"; sourceTree = "<group>"; };
 		CA3BB5861D46177D00506422 /* Array+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Operators.swift"; sourceTree = "<group>"; };
+		CA3BB5881D475F1A00506422 /* Double+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Numerics.swift"; sourceTree = "<group>"; };
 		CA788D7D1D4205C0009232C3 /* rubified-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rubified-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA788D801D4205C0009232C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA788D821D4205C0009232C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				CA788DB21D43269B009232C3 /* Array+Collections.swift */,
-				CA3BB5841D46164800506422 /* Array+Elements.swift */,
 				CA788DA31D431CA4009232C3 /* Array+Iterations.swift */,
 				CA3BB5861D46177D00506422 /* Array+Operators.swift */,
 			);
@@ -117,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				CA788DB01D4321EE009232C3 /* Double+Time.swift */,
+				CA3BB5881D475F1A00506422 /* Double+Numerics.swift */,
 			);
 			path = RubifiedDouble;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 				CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */,
 				CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */,
 				CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */,
-				CA3BB5851D46164800506422 /* Array+Elements.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,
+				CA3BB5891D475F1A00506422 /* Double+Numerics.swift in Sources */,
 				CA788DA71D431CA4009232C3 /* Int+Iterations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

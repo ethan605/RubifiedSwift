@@ -10,40 +10,25 @@ import Foundation
 
 // Iteration extensions
 extension Int {
-  typealias CallbackWithoutIndex = Void -> Void
+  public typealias CallbackWithoutIndex = Void -> Void
   
-  func times(callback: CallbackWithoutIndex? = nil) -> [Int] {
-    if self <= 0 {
-      return []
-    }
-    
-    return self._arrayFrom(0, to: self, callback: callback)
+  public func times(callback: CallbackWithoutIndex? = nil) -> [Int] {
+    return self <= 0 ? [] : _buildArray(0, self, callback)
   }
 
-  func upTo(index: Int, nonIndexCallback callback: CallbackWithoutIndex? = nil) -> [Int] {
-    if index < self {
-      return []
-    }
-    
-    return self._arrayFrom(self, to: index+1, callback: callback)
+  public func upTo(index: Int, _ callback: CallbackWithoutIndex? = nil) -> [Int] {
+    return index < self ? [] : _buildArray(self, index+1, callback)
   }
   
-  func downTo(index: Int, nonIndexCallback callback: CallbackWithoutIndex? = nil) -> [Int] {
-    if index >= self {
-      return []
-    }
-    
-    return self._arrayFrom(self, to: index-1, callback: callback)
+  public func downTo(index: Int, _ callback: CallbackWithoutIndex? = nil) -> [Int] {
+    return index >= self ? [] : _buildArray(self, index-1, callback)
   }
   
   // Private methods
   
-  private func _arrayFrom(from: Int, to: Int, callback: CallbackWithoutIndex!) -> [Int] {
-    let step = from <= to ? 1 : -1
-    let range = from.stride(to: to, by: step)
-    
+  private func _buildArray(from: Int, _ to: Int, _ callback: CallbackWithoutIndex!) -> [Int] {
+    let range = from.stride(to: to, by: from <= to ? 1 : -1)
     if callback != nil { for _ in range { callback() } }
-    
     return [Int](range)
   }
 }
