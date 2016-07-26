@@ -67,11 +67,44 @@ class ViewController: UIViewController {
     let sub2: [Any?] = [8, nil]
     let sub3: [Any?] = [nil]
     let sub4: [Any?] = [7, sub2, [9], sub3]
-    var array: [Any?] = [1, 2, sub1, 6, sub4, nil]
+    var array1: [Any?] = [1, 2, sub1, 6, sub4, nil]
     
-    print("\tUnwrapped array: \(array.unwrap())")
-    print("\tCompacted array: \(array.compact())")
-    array.compact$()
-    print("\tCompacted array (mutate): \(array)")
+    print("\tUnwrapped array: \(array1.unwrap())")
+    print("\tCompacted array: \(array1.compact())")
+    array1.compact$()
+    print("\tCompacted array (mutate): \(array1)")
+    
+    print("Pop, shift, push, unshift:")
+    var array2 = [1, 2, 3, 1, 2, 4, 3, 2, 13]
+    array2.pop()
+    array2.shift()
+    array2.push(10)
+    array2 << 5
+    array2.unshift(-1)
+    print(array2)
+    
+    print("Map$:")
+    array2.map$ { $0 + 1 }
+    
+    print("Uniq:")
+    print(array2.uniq())
+    array2.uniq$()
+    
+    array2.deleteIf { $0 % 2 == 0}
+    array2.delete(3)
+    array2.delete(4)
+    print(array2)
+    
+    var arr1 = [1, 3, 4, 5, 8]
+    let arr2 = [4, 6, 7, 8, 9]
+    
+    print("Operators:")
+    print("\t<<: \(arr1 << 9)")
+    print("\t-: \(arr1 - arr2)")
+    print("\t&: \(arr1 & arr2)")
+    print("\t|: \(arr1 | arr2)")
+    print("\t*4: \(arr1 * 4)")
+    print("\t*0: \(arr1 * 0)")
+    print("\t*', ': \(arr1 * ", ")")
   }
 }

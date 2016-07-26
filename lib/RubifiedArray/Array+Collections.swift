@@ -53,3 +53,25 @@ extension Array where Element: OptionalType {
     self = self.compact()
   }
 }
+
+extension Array where Element: Hashable {
+  func uniq() -> [Element] {
+    return self.reduce([Element]()) { (reduced, element) in
+      var reduced = reduced
+      if !reduced.contains(element) { reduced.append(element) }
+      return reduced
+    }
+  }
+  
+  mutating func uniq$() {
+    self = self.uniq()
+  }
+}
+
+extension Array where Element: Equatable {
+  mutating func delete(element: Element) -> Element? {
+    let originalLength = self.count
+    self = self.filter { $0 != element }
+    return (originalLength == self.count ? nil : element)
+  }
+}
