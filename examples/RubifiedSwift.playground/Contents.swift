@@ -2,58 +2,20 @@
 
 import Foundation
 
-protocol OptionalType {
-  associatedtype Wrapped
-  var optional: Wrapped? { get }
-}
-
-extension Optional: OptionalType {
-  var optional: Wrapped? { return self }
-}
-
-extension Array where Element: OptionalType {
-  func unwrapped() -> [Element.Wrapped]? {
-    let initial = Optional<[Element.Wrapped]>([])
+extension Array where Element: _ArrayType {
+  // Transpose m*n matrix to n*m matrix
+  func transpose() -> [[Element.Generator.Element]] {
+    let zero = Element.Index.Distance(0)
+    let elementSize = self.map { $0.count }.reduce(zero) { $0 == zero || $0 == $1 ? $1 : zero } as! Int
     
-    return self.reduce(initial) { (reduced, element) in
-      element.optional.map { (unwrappedElement) in
-        if let subArray = unwrappedElement as? Array {
-          return reduced! + (subArray.unwrapped() ?? [])
-        } else {
-          return reduced! + [unwrappedElement]
-        }
-      }
-    }
-  }
-  
-  func compact() -> [Element] {
-    let initial = [Element]()
-    
-    return self.reduce(initial) { (reduced, element) in
-      if let unwrappedElement = element.optional {
-        if let subArray = unwrappedElement as? Array {
-          return reduced + subArray.compact()
-        }
-      }
-      
-      return reduced + (element.optional == nil ? [] : [element])
-    }
+    if elementSize == 0 { fatalError("Element sizes mismatched") }
+    return [Int](0..<elementSize).map { (index) in self.map { $0[index] } }
   }
 }
 
-let sub1 = [4, 5]
-let sub2: [Any?] = [8, nil]
-let sub3: [Any?] = [nil]
-let sub4: [Any?] = [7, sub2, [9], sub3]
-var array: [Any?] = [1, 2, sub1, 6, sub4]
+let arr1 = [[1, 2, 3], [4, 5, 6]]
+let arr2 = [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
 
-print(array.unwrapped() ?? [])
-print(array.compact())
-print(array.compact().unwrapped() ?? [])
-
-// Catersian product
-public func *<T>(lhs: Array<T>, rhs: Array<T>) -> Array<Array<T>> {
-  return lhs.map { (lhe) in rhs.map { [lhe, $0] } }.reduce([], combine:+)
-}
-
-print([1, 2, 3] * [4, 5, 6])
+print(arr1.transpose())
+print(arr2.transpose())
+print(arr2.transpose().map { $0.transpose() })

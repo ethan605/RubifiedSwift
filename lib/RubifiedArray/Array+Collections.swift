@@ -73,3 +73,14 @@ extension Array where Element: Equatable {
     return (originalLength == self.count ? nil : element)
   }
 }
+
+extension Array where Element: _ArrayType {
+  // Transpose m*n matrix to n*m matrix
+  func transpose() -> [[Element.Generator.Element]] {
+    let zero = Element.Index.Distance(0)
+    let elementSize = self.map { $0.count }.reduce(zero) { $0 == zero || $0 == $1 ? $1 : zero } as! Int
+    
+    if elementSize == 0 { fatalError("Element sizes mismatched") }
+    return [Int](0..<elementSize).map { (index) in self.map { $0[index] } }
+  }
+}

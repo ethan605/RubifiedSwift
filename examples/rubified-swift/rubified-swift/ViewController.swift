@@ -69,9 +69,9 @@ class ViewController: UIViewController {
     let sub4: [Any?] = [7, sub2, [9], sub3]
     var array1: [Any?] = [1, 2, sub1, 6, sub4, nil]
     
-    print("\tUnwrapped array: \(array1.unwrapped())")
+    print("\tUnwrapped array: \(array1.unwrapped() ?? [])")
     print("\tCompacted array: \(array1.compact())")
-    print("\tCompacted & Unwrapped array: \(array1.compact().unwrapped())")
+    print("\tCompacted & Unwrapped array: \(array1.compact().unwrapped() ?? [])")
     array1.compact$()
     print("\tCompacted array (mutate): \(array1)")
     
@@ -86,11 +86,13 @@ class ViewController: UIViewController {
     
     print("Map$:")
     array2.map$ { $0 + 1 }
+    print(array2)
     
     print("Uniq:")
     print(array2.uniq())
     array2.uniq$()
     
+    print("Delete:")
     array2.deleteIf { $0 % 2 == 0}
     array2.delete(3)
     array2.delete(4)
@@ -105,9 +107,17 @@ class ViewController: UIViewController {
     print("\tIntersect (arr1 & arr2): \(arr1 & arr2)")
     print("\tComplement (arr1 - arr2): \(arr1 - arr2)")
     print("\tSymmetric difference (arr1 ^ arr2): \(arr1 ^ arr2)")
-    print("\tCartesian product: \(arr1 * arr2)")
+    print("\tCartesian product (arr1 * arr2): \(arr1 * arr2)")
     print("\tScala product (*4): \(arr1 * 4)")
     print("\tScala product (*0): \(arr1 * 0)")
     print("\tString join (*', '): \(arr1 * ", ")")
+    
+    let transpose1 = [[1, 2, 3], [4, 5, 6]]
+    let transpose2 = [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+    
+    print("Transpose:")
+    print("\t\(transpose1) -> \(transpose1.transpose())")
+    print("\t\(transpose2) -> \(transpose2.transpose())")
+    print("\t\(transpose2).transpose.map(transpose) -> \(transpose2.transpose().map { $0.transpose() })")
   }
 }
