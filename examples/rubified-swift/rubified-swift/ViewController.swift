@@ -119,5 +119,15 @@ class ViewController: UIViewController {
     print("\t\(transpose1) -> \(transpose1.transpose())")
     print("\t\(transpose2) -> \(transpose2.transpose())")
     print("\t\(transpose2).transpose.map(transpose) -> \(transpose2.transpose().map { $0.transpose() })")
+    
+    print("Permutation:")
+    let startTime = NSDate()
+    var count = 0
+    NSObject.performInBackground({
+      count = 10.times().permutation().count
+    }) {
+      let endTime = NSDate()
+      print("\t\(count) generated in \(startTime.timeIntervalSinceDate(endTime))s")
+    }
   }
 }

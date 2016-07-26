@@ -12,7 +12,6 @@ extension Array {
   public typealias CallbackWithIndex = (Element, Int) -> Void
   
   public func withIndex(callback: CallbackWithIndex) {
-    var idx = -1
-    self.forEach { idx += 1; callback($0, idx) }
+    self.enumerate().forEach { callback($1, $0) }
   }
 }

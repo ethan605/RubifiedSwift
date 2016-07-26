@@ -75,6 +75,28 @@ extension Array {
     self.withIndex { if !callback($0) { indices.append($1) } }
     for index in indices.reverse() { self.removeAtIndex(index) }
   }
+  
+  public func permutation() -> [[Element]] {
+    var result = [[Element]](arrayLiteral: self)
+    _permutate(self, &result)
+    return result
+  }
+  
+  private func _permutate(source: [Element], inout _ result: [[Element]]) {
+    var a = [Element](source)
+    let n = a.count
+    var p = [Int](0...n)
+    var i = 1
+    
+    while i < n {
+      p[i] -= 1
+      let j = i % 2 == 0 ? 0 : p[i]
+      let tmp = a[i]; a[i] = a[j]; a[j] = tmp
+      result.append(a)
+      i = 1
+      while p[i] == 0 { p[i] = i; i += 1 }
+    }
+  }
 }
 
 // Optional elements
