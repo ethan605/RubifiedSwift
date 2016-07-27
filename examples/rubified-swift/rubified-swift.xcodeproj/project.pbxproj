@@ -21,6 +21,8 @@
 		CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DAA1D431D38009232C3 /* Int+Time.swift */; };
 		CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB01D4321EE009232C3 /* Double+Time.swift */; };
 		CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB21D43269B009232C3 /* Array+Collections.swift */; };
+		CA939EC71D48BEDD00B84CEB /* String+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EC61D48BEDD00B84CEB /* String+Manipulations.swift */; };
+		CA939EC91D48BEE500B84CEB /* String+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EC81D48BEE500B84CEB /* String+Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		CA788DAA1D431D38009232C3 /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
 		CA788DB01D4321EE009232C3 /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
 		CA788DB21D43269B009232C3 /* Array+Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Collections.swift"; sourceTree = "<group>"; };
+		CA939EC61D48BEDD00B84CEB /* String+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Manipulations.swift"; sourceTree = "<group>"; };
+		CA939EC81D48BEE500B84CEB /* String+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operators.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				CA788DA21D431CA4009232C3 /* RubifiedArray */,
 				CA788DAF1D4321EE009232C3 /* RubifiedDouble */,
 				CA788DA41D431CA4009232C3 /* RubifiedInt */,
+				CA939EC51D48BECC00B84CEB /* RubifiedString */,
 			);
 			name = lib;
 			path = ../../../lib;
@@ -130,6 +135,15 @@
 				CA3BB5881D475F1A00506422 /* Double+Numerics.swift */,
 			);
 			path = RubifiedDouble;
+			sourceTree = "<group>";
+		};
+		CA939EC51D48BECC00B84CEB /* RubifiedString */ = {
+			isa = PBXGroup;
+			children = (
+				CA939EC61D48BEDD00B84CEB /* String+Manipulations.swift */,
+				CA939EC81D48BEE500B84CEB /* String+Operators.swift */,
+			);
+			path = RubifiedString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA939EC91D48BEE500B84CEB /* String+Operators.swift in Sources */,
 				CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */,
 				CA3BB5871D46177D00506422 /* Array+Operators.swift in Sources */,
 				CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */,
+				CA939EC71D48BEDD00B84CEB /* String+Manipulations.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
 				CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */,
 				CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */,
