@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name         = "RubifiedSwift"
   s.version      = "0.9"
-  s.summary      = "Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations"
+  s.summary      = "Swift extensions for Number, String, Array, Dictionary... inspired by Ruby-styled implementations"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ethan605/rubified-swift", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/ethan605/rubified-swift.git", :tag => "#{s.version}" }
 
   s.source_files  = "source", "source/**/*.swift"
   # s.exclude_files = "source/exclude"
