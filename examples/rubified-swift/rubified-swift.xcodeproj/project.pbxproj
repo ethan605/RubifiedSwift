@@ -7,28 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA2FC0D91D477D8900E94551 /* NSObject+GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FC0D81D477D8900E94551 /* NSObject+GCD.swift */; };
-		CA3BB5871D46177D00506422 /* Array+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3BB5861D46177D00506422 /* Array+Operators.swift */; };
-		CA3BB5891D475F1A00506422 /* Double+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3BB5881D475F1A00506422 /* Double+Numerics.swift */; };
 		CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D801D4205C0009232C3 /* AppDelegate.swift */; };
 		CA788D831D4205C0009232C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D821D4205C0009232C3 /* ViewController.swift */; };
 		CA788D861D4205C0009232C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D841D4205C0009232C3 /* Main.storyboard */; };
 		CA788D881D4205C0009232C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA788D871D4205C0009232C3 /* Assets.xcassets */; };
 		CA788D8B1D4205C0009232C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D891D4205C0009232C3 /* LaunchScreen.storyboard */; };
-		CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA31D431CA4009232C3 /* Array+Iterations.swift */; };
-		CA788DA71D431CA4009232C3 /* Int+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA51D431CA4009232C3 /* Int+Iterations.swift */; };
-		CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DA81D431CB9009232C3 /* Int+Numerics.swift */; };
-		CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DAA1D431D38009232C3 /* Int+Time.swift */; };
-		CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB01D4321EE009232C3 /* Double+Time.swift */; };
-		CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788DB21D43269B009232C3 /* Array+Collections.swift */; };
-		CA939EC71D48BEDD00B84CEB /* String+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EC61D48BEDD00B84CEB /* String+Manipulations.swift */; };
-		CA939EC91D48BEE500B84CEB /* String+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EC81D48BEE500B84CEB /* String+Operators.swift */; };
+		CA939EDB1D48D0EE00B84CEB /* NSObject+GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ECC1D48D0EE00B84CEB /* NSObject+GCD.swift */; };
+		CA939EDC1D48D0EE00B84CEB /* Array+Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */; };
+		CA939EDD1D48D0EE00B84CEB /* Array+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */; };
+		CA939EDE1D48D0EE00B84CEB /* Array+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */; };
+		CA939EDF1D48D0EE00B84CEB /* Double+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED21D48D0EE00B84CEB /* Double+Numerics.swift */; };
+		CA939EE01D48D0EE00B84CEB /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED31D48D0EE00B84CEB /* Double+Time.swift */; };
+		CA939EE11D48D0EE00B84CEB /* Int+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED51D48D0EE00B84CEB /* Int+Iterations.swift */; };
+		CA939EE21D48D0EE00B84CEB /* Int+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED61D48D0EE00B84CEB /* Int+Numerics.swift */; };
+		CA939EE31D48D0EE00B84CEB /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED71D48D0EE00B84CEB /* Int+Time.swift */; };
+		CA939EE41D48D0EE00B84CEB /* String+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */; };
+		CA939EE51D48D0EE00B84CEB /* String+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA2FC0D81D477D8900E94551 /* NSObject+GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+GCD.swift"; sourceTree = "<group>"; };
-		CA3BB5861D46177D00506422 /* Array+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Operators.swift"; sourceTree = "<group>"; };
-		CA3BB5881D475F1A00506422 /* Double+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Numerics.swift"; sourceTree = "<group>"; };
 		CA788D7D1D4205C0009232C3 /* rubified-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rubified-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA788D801D4205C0009232C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA788D821D4205C0009232C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,14 +33,17 @@
 		CA788D871D4205C0009232C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA788D8A1D4205C0009232C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA788D8C1D4205C0009232C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA788DA31D431CA4009232C3 /* Array+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Iterations.swift"; sourceTree = "<group>"; };
-		CA788DA51D431CA4009232C3 /* Int+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Iterations.swift"; sourceTree = "<group>"; };
-		CA788DA81D431CB9009232C3 /* Int+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Numerics.swift"; sourceTree = "<group>"; };
-		CA788DAA1D431D38009232C3 /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
-		CA788DB01D4321EE009232C3 /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
-		CA788DB21D43269B009232C3 /* Array+Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Collections.swift"; sourceTree = "<group>"; };
-		CA939EC61D48BEDD00B84CEB /* String+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Manipulations.swift"; sourceTree = "<group>"; };
-		CA939EC81D48BEE500B84CEB /* String+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operators.swift"; sourceTree = "<group>"; };
+		CA939ECC1D48D0EE00B84CEB /* NSObject+GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+GCD.swift"; sourceTree = "<group>"; };
+		CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Collections.swift"; sourceTree = "<group>"; };
+		CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Iterations.swift"; sourceTree = "<group>"; };
+		CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Operators.swift"; sourceTree = "<group>"; };
+		CA939ED21D48D0EE00B84CEB /* Double+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Numerics.swift"; sourceTree = "<group>"; };
+		CA939ED31D48D0EE00B84CEB /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
+		CA939ED51D48D0EE00B84CEB /* Int+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Iterations.swift"; sourceTree = "<group>"; };
+		CA939ED61D48D0EE00B84CEB /* Int+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Numerics.swift"; sourceTree = "<group>"; };
+		CA939ED71D48D0EE00B84CEB /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
+		CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Manipulations.swift"; sourceTree = "<group>"; };
+		CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operators.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CA2FC0D71D477D7F00E94551 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				CA2FC0D81D477D8900E94551 /* NSObject+GCD.swift */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
 		CA788D741D4205C0009232C3 = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +76,7 @@
 		CA788D7F1D4205C0009232C3 /* rubified-swift */ = {
 			isa = PBXGroup;
 			children = (
-				CA788DA11D431CA4009232C3 /* lib */,
+				CA939ECA1D48D0EE00B84CEB /* source */,
 				CA788D801D4205C0009232C3 /* AppDelegate.swift */,
 				CA788D821D4205C0009232C3 /* ViewController.swift */,
 				CA788D841D4205C0009232C3 /* Main.storyboard */,
@@ -95,53 +87,61 @@
 			path = "rubified-swift";
 			sourceTree = "<group>";
 		};
-		CA788DA11D431CA4009232C3 /* lib */ = {
+		CA939ECA1D48D0EE00B84CEB /* source */ = {
 			isa = PBXGroup;
 			children = (
-				CA2FC0D71D477D7F00E94551 /* Other */,
-				CA788DA21D431CA4009232C3 /* RubifiedArray */,
-				CA788DAF1D4321EE009232C3 /* RubifiedDouble */,
-				CA788DA41D431CA4009232C3 /* RubifiedInt */,
-				CA939EC51D48BECC00B84CEB /* RubifiedString */,
+				CA939ECB1D48D0EE00B84CEB /* Other */,
+				CA939ECD1D48D0EE00B84CEB /* RubifiedArray */,
+				CA939ED11D48D0EE00B84CEB /* RubifiedDouble */,
+				CA939ED41D48D0EE00B84CEB /* RubifiedInt */,
+				CA939ED81D48D0EE00B84CEB /* RubifiedString */,
 			);
-			name = lib;
-			path = ../../../lib;
+			name = source;
+			path = ../../../source;
 			sourceTree = "<group>";
 		};
-		CA788DA21D431CA4009232C3 /* RubifiedArray */ = {
+		CA939ECB1D48D0EE00B84CEB /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				CA788DB21D43269B009232C3 /* Array+Collections.swift */,
-				CA788DA31D431CA4009232C3 /* Array+Iterations.swift */,
-				CA3BB5861D46177D00506422 /* Array+Operators.swift */,
+				CA939ECC1D48D0EE00B84CEB /* NSObject+GCD.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CA939ECD1D48D0EE00B84CEB /* RubifiedArray */ = {
+			isa = PBXGroup;
+			children = (
+				CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */,
+				CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */,
+				CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */,
 			);
 			path = RubifiedArray;
 			sourceTree = "<group>";
 		};
-		CA788DA41D431CA4009232C3 /* RubifiedInt */ = {
+		CA939ED11D48D0EE00B84CEB /* RubifiedDouble */ = {
 			isa = PBXGroup;
 			children = (
-				CA788DA51D431CA4009232C3 /* Int+Iterations.swift */,
-				CA788DA81D431CB9009232C3 /* Int+Numerics.swift */,
-				CA788DAA1D431D38009232C3 /* Int+Time.swift */,
-			);
-			path = RubifiedInt;
-			sourceTree = "<group>";
-		};
-		CA788DAF1D4321EE009232C3 /* RubifiedDouble */ = {
-			isa = PBXGroup;
-			children = (
-				CA788DB01D4321EE009232C3 /* Double+Time.swift */,
-				CA3BB5881D475F1A00506422 /* Double+Numerics.swift */,
+				CA939ED21D48D0EE00B84CEB /* Double+Numerics.swift */,
+				CA939ED31D48D0EE00B84CEB /* Double+Time.swift */,
 			);
 			path = RubifiedDouble;
 			sourceTree = "<group>";
 		};
-		CA939EC51D48BECC00B84CEB /* RubifiedString */ = {
+		CA939ED41D48D0EE00B84CEB /* RubifiedInt */ = {
 			isa = PBXGroup;
 			children = (
-				CA939EC61D48BEDD00B84CEB /* String+Manipulations.swift */,
-				CA939EC81D48BEE500B84CEB /* String+Operators.swift */,
+				CA939ED51D48D0EE00B84CEB /* Int+Iterations.swift */,
+				CA939ED61D48D0EE00B84CEB /* Int+Numerics.swift */,
+				CA939ED71D48D0EE00B84CEB /* Int+Time.swift */,
+			);
+			path = RubifiedInt;
+			sourceTree = "<group>";
+		};
+		CA939ED81D48D0EE00B84CEB /* RubifiedString */ = {
+			isa = PBXGroup;
+			children = (
+				CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */,
+				CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */,
 			);
 			path = RubifiedString;
 			sourceTree = "<group>";
@@ -217,19 +217,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA939EC91D48BEE500B84CEB /* String+Operators.swift in Sources */,
-				CA788DAB1D431D38009232C3 /* Int+Time.swift in Sources */,
-				CA3BB5871D46177D00506422 /* Array+Operators.swift in Sources */,
-				CA788DB11D4321EE009232C3 /* Double+Time.swift in Sources */,
-				CA939EC71D48BEDD00B84CEB /* String+Manipulations.swift in Sources */,
+				CA939EE51D48D0EE00B84CEB /* String+Operators.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
-				CA788DB31D43269B009232C3 /* Array+Collections.swift in Sources */,
-				CA788DA61D431CA4009232C3 /* Array+Iterations.swift in Sources */,
-				CA788DA91D431CB9009232C3 /* Int+Numerics.swift in Sources */,
-				CA2FC0D91D477D8900E94551 /* NSObject+GCD.swift in Sources */,
+				CA939EE01D48D0EE00B84CEB /* Double+Time.swift in Sources */,
+				CA939EE31D48D0EE00B84CEB /* Int+Time.swift in Sources */,
+				CA939EE41D48D0EE00B84CEB /* String+Manipulations.swift in Sources */,
+				CA939EDD1D48D0EE00B84CEB /* Array+Iterations.swift in Sources */,
+				CA939EDB1D48D0EE00B84CEB /* NSObject+GCD.swift in Sources */,
+				CA939EDE1D48D0EE00B84CEB /* Array+Operators.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,
-				CA3BB5891D475F1A00506422 /* Double+Numerics.swift in Sources */,
-				CA788DA71D431CA4009232C3 /* Int+Iterations.swift in Sources */,
+				CA939EDC1D48D0EE00B84CEB /* Array+Collections.swift in Sources */,
+				CA939EE21D48D0EE00B84CEB /* Int+Numerics.swift in Sources */,
+				CA939EE11D48D0EE00B84CEB /* Int+Iterations.swift in Sources */,
+				CA939EDF1D48D0EE00B84CEB /* Double+Numerics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
