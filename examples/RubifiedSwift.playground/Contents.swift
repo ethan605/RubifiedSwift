@@ -94,3 +94,7 @@ str.split(", ")
 
 str.index("h")
 str.index("World!")
+
+str.uppercaseString
+str.lowercaseString
+str.lowercaseString.capitalizedString
