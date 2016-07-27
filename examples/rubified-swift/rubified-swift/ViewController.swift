@@ -54,13 +54,13 @@ class ViewController: UIViewController {
   
   func tryRubifiedArray() {
     print("Times with index:")
-    3.times().withIndex { print("\tPrint with index: \($0)") }
+    3.times().eachWithIndex { print("\tPrint with index: \($0)") }
     
     print("Up to with index:")
-    3.upTo(5).withIndex { print("\tPrint with index: \($0)") }
+    3.upTo(5).eachWithIndex { print("\tPrint with index: \($0)") }
     
     print("Down to with index:")
-    3.downTo(1).withIndex { print("\tPrint with index: \($0)") }
+    3.downTo(1).eachWithIndex { print("\tPrint with index: \($0)") }
     
     print("Compact:")
     let sub1 = [4, 5]

@@ -26,18 +26,17 @@ extension Array {
     return self
   }
   
-  public mutating func unshift(newElement: Element) -> [Element] {
-    self.insert(newElement, atIndex: 0)
-    return self
-  }
-  
   public mutating func pop() -> Element? {
     return self.popLast()
   }
   
   public mutating func shift() -> Element? {
-    if self.count == 0 { return nil }
-    return self.removeAtIndex(0)
+    return self.count == 0 ? nil : self.removeAtIndex(0)
+  }
+  
+  public mutating func unshift(newElement: Element) -> [Element] {
+    self.insert(newElement, atIndex: 0)
+    return self
   }
   
   public func join(separator: String = "") -> String {
@@ -65,15 +64,13 @@ extension Array {
   }
   
   public mutating func deleteIf(callback: Element -> Bool) {
-    var indices = [Int]()
-    self.withIndex { if callback($0) { indices.append($1) } }
-    for index in indices.reverse() { self.removeAtIndex(index) }
+    let indices: [Int] = self.enumerate().map { (idx, element) in callback(element) ? idx : -1 }
+    indices.filter { $0 != -1 }.reverse().forEach { (idx) in self.removeAtIndex(idx) }
   }
   
   public mutating func keepIf(callback: Element -> Bool) {
-    var indices = [Int]()
-    self.withIndex { if !callback($0) { indices.append($1) } }
-    for index in indices.reverse() { self.removeAtIndex(index) }
+    let indices: [Int] = self.enumerate().map { (idx, element) in callback(element) ? -1 : idx }
+    indices.filter { $0 != -1 }.reverse().forEach { (idx) in self.removeAtIndex(idx) }
   }
   
   public func permutation() -> [[Element]] {
@@ -142,6 +139,16 @@ extension Array where Element: OptionalType {
     self = self.compact()
   }
   
+  public func rotate(count: Int = 1) -> [Element] {
+    var index = count % self.count
+    if index < 0 { index += self.count }
+    return [Element](self[index..<self.count] + self[0..<index])
+  }
+  
+  public mutating func rotate$(count: Int = 1) {
+    self = self.rotate()
+  }
+  
   public func sample() -> Element? {
     return self.isEmpty ? nil : self[Int(arc4random()) % self.count]
   }
@@ -161,6 +168,12 @@ extension Array where Element: OptionalType {
 
 // Equatable elements
 extension Array where Element: Equatable {
+  public mutating func delete(element: Element) -> Element? {
+    let originalLength = self.count
+    self = self.filter { $0 != element }
+    return (originalLength == self.count ? nil : element)
+  }
+  
   public func uniq() -> [Element] {
     return self.reduce([Element]()) { (reduced, element) in
       reduced + (reduced.contains(element) ? [] : [element])
@@ -170,11 +183,15 @@ extension Array where Element: Equatable {
   public mutating func uniq$() {
     self = self.uniq()
   }
+}
+
+extension Array where Element: Comparable {
+  public func max() -> Element? {
+    return self.dropFirst().reduce(self.first) { (r, e) in r > e ? r : e }
+  }
   
-  public mutating func delete(element: Element) -> Element? {
-    let originalLength = self.count
-    self = self.filter { $0 != element }
-    return (originalLength == self.count ? nil : element)
+  public func min() -> Element? {
+    return self.dropFirst().reduce(self.first) { (r, e) in r < e ? r : e }
   }
 }
 

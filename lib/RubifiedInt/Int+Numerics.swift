@@ -23,4 +23,18 @@ extension Int {
   public func toF() -> Double { return Double(self) }
   public func isEven() -> Bool { return self % 2 == 0 }
   public func isOdd() -> Bool { return self % 2 == 1 }
+  
+  // Greatest common divisor
+  public func gcd(other: Int) -> Int {
+    var a: Int = self > other ? self : other
+    var b: Int = self > other ? other : self
+    var t = 0
+    while a % b > 0 { t = a; a = b; b = t % b }
+    return b
+  }
+  
+  // Least common multiple
+  public func lcm(other: Int) -> Int {
+    return (self * other) / self.gcd(other)
+  }
 }

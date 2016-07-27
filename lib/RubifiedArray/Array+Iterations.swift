@@ -9,9 +9,11 @@
 import Foundation
 
 extension Array {
-  public typealias CallbackWithIndex = (Element, Int) -> Void
-  
-  public func withIndex(callback: CallbackWithIndex) {
+  public func eachWithIndex(callback: (Element, Int) -> Void) {
     self.enumerate().forEach { callback($1, $0) }
+  }
+  
+  public func mapWithIndex<T>(callback: (Element, Int) -> T) -> [T] {
+    return self.enumerate().map { callback($1, $0) }
   }
 }
