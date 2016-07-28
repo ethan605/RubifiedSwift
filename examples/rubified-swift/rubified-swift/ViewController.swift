@@ -15,8 +15,8 @@ class ViewController: UIViewController {
   }
   
   func tryRubified() {
-//    self.tryRubifiedInt()
-//    self.tryRubifiedDouble()
+    self.tryRubifiedInt()
+    self.tryRubifiedDouble()
     self.tryRubifiedArray()
   }
   

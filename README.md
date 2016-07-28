@@ -119,11 +119,84 @@ array.deepCompact()              // [Optional(1), Optional(2), Optional([4, 5]),
 
 ### Number extensions
 
-#### Double
+```swift
+1.0.abs()         // 1.0
+-1.0.abs()        // 1.0
 
-#### Int
+7.seconds()       // 7.0
+6.minutes()       // 360.0
+5.hours()         // 18000.0
+4.days()          // 345600.0
+3.weeks()         // 1814400.0
+2.months()        // 5184000.0
+1.years()         // 31536000.0
+
+3.hours().ago()
+3.hours().sinceNow()
+
+let time = 3.hours().ago()
+3.hours().until(time)
+3.hours().since(time)
+
+5.times()         // [0, 1, 2, 3, 4, 5]
+5.times {
+  print("Invoke callback")
+}
+
+3.upTo(5)         // [3, 4, 5]
+3.upTo(5) {
+  print("Invoke callback")
+}
+
+3.downTo(1)       // [3, 2, 1]
+3.downTo(1) {
+  print("Invoke callback")
+}
+
+1.next()          // 2
+1.pred()          // 0
+
+1.abs()           // 1
+-1.abs()          // 1
+
+15.toF()           // 15.0
+15.toS()           // "15"
+75.toS(2)          // "1001011"
+75.toS(8)          // "113"
+75.toS(16)                        // "4B"
+75.toS(16, uppercase: false)      // "4b"
+
+3.isEven()         // false
+3.isOdd()          // true
+
+21.gcd(6)          // 3
+21.lcm(6)          // 42
+```
 
 ### String extensions
+
+```swift
+var str = "Hello, World!"
+
+str.length          // 13
+str[1]              // "e"
+str[-1]             // "!"
+str[1...4]          // "ello"
+
+str.reverse()       // "!dlroW ,olleH"
+
+str.split()         // ["H", "e", "l", "l", "o", ",", " ", "W", "o", "r", "l", "d", "!"]
+str.split(", ")     // ["Hello", "World!"]
+
+str.index("l")      // 2
+
+str * 2                   // "Hello, World!Hello, World!"
+str << " You're good"     // "Hello, World! You're good"
+str << 33                 // "Hello, World! You're good!"
+
+let match: String? = str =~ "\\w+"          // "Hello"
+let matches: [String] = str =~ "\\w+"       // ["Hello", "World"]
+```
 
 [CocoaPods]: https://cocoapods.org
 [Podfile]: https://guides.cocoapods.org/using/the-podfile.html

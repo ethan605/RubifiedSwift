@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "RubifiedSwift"
-  s.version      = "0.9.0"
+  s.version      = "0.9.1"
   s.summary      = "Swift extensions for Number, String, Array, Dictionary... inspired by Ruby-styled implementations"
 
   # This description is used to generate tags and improve search results.
