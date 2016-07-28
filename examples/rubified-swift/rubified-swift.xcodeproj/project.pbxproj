@@ -23,6 +23,10 @@
 		CA939EE31D48D0EE00B84CEB /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED71D48D0EE00B84CEB /* Int+Time.swift */; };
 		CA939EE41D48D0EE00B84CEB /* String+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */; };
 		CA939EE51D48D0EE00B84CEB /* String+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */; };
+		CAAAD93C1D49CD760093ABD2 /* Array+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD93B1D49CD760093ABD2 /* Array+Optional.swift */; };
+		CAAAD93E1D49CE020093ABD2 /* Array+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD93D1D49CE020093ABD2 /* Array+Equatable.swift */; };
+		CAAAD9401D49CE1C0093ABD2 /* Array+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD93F1D49CE1C0093ABD2 /* Array+Comparable.swift */; };
+		CAAAD9421D49CE290093ABD2 /* Array+ArrayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD9411D49CE290093ABD2 /* Array+ArrayType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		CA939ED71D48D0EE00B84CEB /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
 		CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Manipulations.swift"; sourceTree = "<group>"; };
 		CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operators.swift"; sourceTree = "<group>"; };
+		CAAAD93B1D49CD760093ABD2 /* Array+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Optional.swift"; sourceTree = "<group>"; };
+		CAAAD93D1D49CE020093ABD2 /* Array+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Equatable.swift"; sourceTree = "<group>"; };
+		CAAAD93F1D49CE1C0093ABD2 /* Array+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Comparable.swift"; sourceTree = "<group>"; };
+		CAAAD9411D49CE290093ABD2 /* Array+ArrayType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ArrayType.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +119,13 @@
 		CA939ECD1D48D0EE00B84CEB /* RubifiedArray */ = {
 			isa = PBXGroup;
 			children = (
+				CAAAD9411D49CE290093ABD2 /* Array+ArrayType.swift */,
 				CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */,
+				CAAAD93F1D49CE1C0093ABD2 /* Array+Comparable.swift */,
+				CAAAD93D1D49CE020093ABD2 /* Array+Equatable.swift */,
 				CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */,
 				CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */,
+				CAAAD93B1D49CD760093ABD2 /* Array+Optional.swift */,
 			);
 			path = RubifiedArray;
 			sourceTree = "<group>";
@@ -218,11 +230,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA939EE51D48D0EE00B84CEB /* String+Operators.swift in Sources */,
+				CAAAD9401D49CE1C0093ABD2 /* Array+Comparable.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
 				CA939EE01D48D0EE00B84CEB /* Double+Time.swift in Sources */,
+				CAAAD93E1D49CE020093ABD2 /* Array+Equatable.swift in Sources */,
 				CA939EE31D48D0EE00B84CEB /* Int+Time.swift in Sources */,
+				CAAAD9421D49CE290093ABD2 /* Array+ArrayType.swift in Sources */,
 				CA939EE41D48D0EE00B84CEB /* String+Manipulations.swift in Sources */,
 				CA939EDD1D48D0EE00B84CEB /* Array+Iterations.swift in Sources */,
+				CAAAD93C1D49CD760093ABD2 /* Array+Optional.swift in Sources */,
 				CA939EDB1D48D0EE00B84CEB /* NSObject+GCD.swift in Sources */,
 				CA939EDE1D48D0EE00B84CEB /* Array+Operators.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,

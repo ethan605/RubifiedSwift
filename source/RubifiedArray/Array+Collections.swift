@@ -1,5 +1,5 @@
 //
-//  Array+Collections.swift
+//  Array+Elements.swift
 //  rubified-swift
 //
 //  Created by Ethan Nguyen on 7/23/16.
@@ -8,200 +8,212 @@
 
 import Foundation
 
-// Collection extensions
-
-// Normal elements
+/**
+ Extensions for Array
+ Set of extended methods for normal elements manipulation
+ */
 extension Array {
-  public func at(idx: Int) -> Element? {
-    if idx > self.count || idx < -self.count { return nil }
+  /**
+   Returns the element at `index`.
+   A negative index counts from the end of `self`. Returns `nil` if the index is out of range.
+   
+   By default, class `Array` already has subscript function with an `Int` param,
+   but it refuse to process negative indices.
+   Function `at()` receives and processes both positive and negative indices.
+   
+   - parameter index: The index of element to be retrieved.
+   
+   - returns: Returns element at `index` position if `index` is in range, otherwise returns `nil`.
+   */
+  public func at(index: Int) -> Element? {
+    if index > self.count || index < -self.count { return nil }
     
-    var absIdx = idx
-    if idx < 0 { absIdx += self.count }
+    var absIndex = index
+    if index < 0 { absIndex += self.count }
     
-    return self[absIdx]
+    return self[absIndex]
   }
   
-  public mutating func push(newElement: Element) -> [Element] {
-    self.append(newElement)
+  /**
+   Append — Pushes the given objects on to the end of this array.
+   This expression returns the array itself, so several appends may be chained together.
+   
+   - seealso: `pop()` function for the opposite effect.
+   
+   - parameter newElements: Objects to be appended.
+   
+   - returns: This array itself after appending new elements.
+   */
+  public mutating func push(newElements: Element...) -> [Element] {
+    self.appendContentsOf(newElements)
     return self
   }
   
+  /**
+   Removes the last element from `self` and returns it, or `nil` if the array is empty.
+   
+   - returns: Returns `nil` if this array is empty. Otherwise returns the last element.
+   */
   public mutating func pop() -> Element? {
     return self.popLast()
   }
   
+  /**
+   Removes the first element of `self` and returns it (shifting all other elements down by one).
+   Returns `nil` if the array is empty.
+   
+   - returns: Returns `nil` if this array is empty. Otherwise returns the first element.
+   */
   public mutating func shift() -> Element? {
     return self.count == 0 ? nil : self.removeAtIndex(0)
   }
   
-  public mutating func unshift(newElement: Element) -> [Element] {
-    self.insert(newElement, atIndex: 0)
+  /**
+   Prepends objects to the front of `self`, moving other elements upwards.
+   
+   - seealso: `shift()` function for the opposite effect.
+   
+   - returns: This array itself after appending new elements.
+   */
+  public mutating func unshift(newElements: Element...) -> [Element] {
+    self.insertContentsOf(newElements, at: 0)
     return self
   }
   
+  /**
+   Returns a string created by converting each element of the array to a string,
+   separated by the given separator. Uses empty string as default.
+   
+   - parameter separator: The string used to separate elements in result string.
+   
+   - returns: The only string contains all elements converted as string.
+   */
   public func join(separator: String = "") -> String {
     return self.map { String($0) }.joinWithSeparator(separator)
   }
   
-  public mutating func map$(callback: Element -> Element) {
+  /**
+   Invokes the given block once for each element of self,
+   replacing the element with the value returned by the block.
+   The array may not be changed instantly every time the block is called.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: This array itself after changes.
+   */
+  public mutating func map$(callback: Element -> Element) -> [Element] {
     self = self.map(callback)
+    return self
   }
   
+  /**
+   Returns a new array containing all elements of `self`
+   for which the given block returns a `true` value.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: The array which given block returns a `true` value.
+   */
   public func select(callback: Element -> Bool) -> [Element] {
     return self.filter(callback)
   }
   
-  public mutating func select$(callback: Element -> Bool) {
+  /**
+   Invokes the given block passing in successive elements from `self`,
+   deleting elements for which the block returns a `false` value.
+   The array may not be changed instantly every time the block is called.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: This array itself after changes.
+   */
+  public mutating func select$(callback: Element -> Bool) -> [Element] {
     self = self.filter(callback)
+    return self
   }
   
+  /**
+   Returns a new array containing the items in self for which the given block is `false`.
+   The ordering of non-rejected elements is maintained.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: The array which given block returns a `false` value.
+   */
   public func reject(callback: Element -> Bool) -> [Element] {
     return self.filter { !callback($0) }
   }
   
-  public mutating func reject$(callback: Element -> Bool) {
+  /**
+   Deletes every element of self for which the block evaluates to `true`.
+   The array may not be changed instantly every time the block is called.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: This array itself after changes.
+   */
+  public mutating func reject$(callback: Element -> Bool) -> [Element] {
     self = self.filter { !callback($0) }
+    return self
   }
   
-  public mutating func deleteIf(callback: Element -> Bool) {
+  /**
+   Deletes every element of `self` for which block evaluates to `true`.
+   The array may not be changed instantly every time the block is called.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: This array itself after changes.
+   */
+  public mutating func deleteIf(callback: Element -> Bool) -> [Element] {
     let indices: [Int] = self.enumerate().map { (idx, element) in callback(element) ? idx : -1 }
     indices.filter { $0 != -1 }.reverse().forEach { (idx) in self.removeAtIndex(idx) }
+    return self
   }
   
+  /**
+   Deletes every element of self for which the given block evaluates to `false`.
+   The array may not be changed instantly every time the block is called.
+   
+   - parameter callback: The block to be called for each element.
+   
+   - returns: This array itself after changes.
+   */
   public mutating func keepIf(callback: Element -> Bool) {
     let indices: [Int] = self.enumerate().map { (idx, element) in callback(element) ? -1 : idx }
     indices.filter { $0 != -1 }.reverse().forEach { (idx) in self.removeAtIndex(idx) }
   }
   
-  public func permutation() -> [[Element]] {
-    var result = [[Element]](arrayLiteral: self)
-    _permutate(self, &result)
+  /**
+   Generates all possible permutations for given number of first elements.
+   If no param or `0` is given, generates for all elements.
+   The implementation using [Countdown Quick Perm Algorithm](http://www.quickperm.org/)
+   and makes no guarantees about the order in which the permutations are generated.
+   
+   - parameter count: Number of first elements to be generated.
+   
+   - returns: All possible permutations for the first `count` elements.
+   */
+  public func permutation(count: Int = 0) -> [[Element]] {
+    let number = count > 0 && count < self.count ? count : self.count
+    let source = [Element](self[0..<number])
+    var result = [[Element]](arrayLiteral: source)  // Init result with first element
+    self._permutate(source, &result)
     return result
   }
   
   private func _permutate(source: [Element], inout _ result: [[Element]]) {
-    var a = [Element](source)
-    let n = a.count
-    var p = [Int](0...n)
-    var i = 1
+    var a = source            // Duplicate source as new array
+    let n = source.count      // Number of elements
+    var p = [Int](0...n)      // Array of flags
+    var i = 1                 // Counting variable
     
     while i < n {
       p[i] -= 1
       let j = i % 2 == 0 ? 0 : p[i]
-      let tmp = a[i]; a[i] = a[j]; a[j] = tmp
+      let tmp = a[i]; a[i] = a[j]; a[j] = tmp       // Swap elements at index i & j
       result.append(a)
-      i = 1
-      while p[i] == 0 { p[i] = i; i += 1 }
+      i = 1; while p[i] == 0 { p[i] = i; i += 1 }
     }
-  }
-}
-
-// Optional elements
-public protocol OptionalType {
-  associatedtype Wrapped
-  var optional: Wrapped? { get }
-}
-
-extension Optional: OptionalType {
-  public var optional: Wrapped? { return self }
-}
-
-extension Array where Element: OptionalType {
-  public func unwrapped() -> [Element.Wrapped]? {
-    let initial = Optional<[Element.Wrapped]>([])
-    
-    return self.reduce(initial) { (reduced, element) in
-      element.optional.map { (unwrappedElement) in
-        if let subArray = unwrappedElement as? Array {
-          return reduced! + (subArray.unwrapped() ?? [])
-        } else {
-          return reduced! + [unwrappedElement]
-        }
-      }
-    }
-  }
-  
-  public func compact() -> [Element] {
-    let initial = [Element]()
-    
-    return self.reduce(initial) { (reduced, element) in
-      if let unwrappedElement = element.optional {
-        if let subArray = unwrappedElement as? Array {
-          return reduced + subArray.compact()
-        }
-      }
-      
-      return reduced + (element.optional == nil ? [] : [element])
-    }
-  }
-  
-  public mutating func compact$() {
-    self = self.compact()
-  }
-  
-  public func rotate(count: Int = 1) -> [Element] {
-    var index = count % self.count
-    if index < 0 { index += self.count }
-    return [Element](self[index..<self.count] + self[0..<index])
-  }
-  
-  public mutating func rotate$(count: Int = 1) {
-    self = self.rotate()
-  }
-  
-  public func sample() -> Element? {
-    return self.isEmpty ? nil : self[Int(arc4random()) % self.count]
-  }
-  
-  public func shuffle(repeats: Int = 1) -> [Element] {
-    if self.isEmpty { return [] }
-    return [Int](0..<repeats).reduce([Element]()) { (_, _) in
-      self.sort { (_, _) in arc4random() < arc4random() }
-    }
-  }
-  
-  public mutating func shuffle$(repeatTime: Int = 1) -> [Element] {
-    self = self.shuffle()
-    return self
-  }
-}
-
-// Equatable elements
-extension Array where Element: Equatable {
-  public mutating func delete(element: Element) -> Element? {
-    let originalLength = self.count
-    self = self.filter { $0 != element }
-    return (originalLength == self.count ? nil : element)
-  }
-  
-  public func uniq() -> [Element] {
-    return self.reduce([Element]()) { (reduced, element) in
-      reduced + (reduced.contains(element) ? [] : [element])
-    }
-  }
-  
-  public mutating func uniq$() {
-    self = self.uniq()
-  }
-}
-
-extension Array where Element: Comparable {
-  public func max() -> Element? {
-    return self.dropFirst().reduce(self.first) { (r, e) in r > e ? r : e }
-  }
-  
-  public func min() -> Element? {
-    return self.dropFirst().reduce(self.first) { (r, e) in r < e ? r : e }
-  }
-}
-
-// Array elements
-extension Array where Element: _ArrayType {
-  // Transpose m*n matrix to n*m matrix
-  public func transpose() -> [[Element.Generator.Element]] {
-    // Map and check if all elements' sizes are identical
-    let size = self.map { $0.count }.reduce(0) { $0 == 0 || $0 == $1 ? $1 : 0 }
-    if size == 0 { fatalError("Element sizes mismatched") }
-    return [Int](0..<size).map { (idx) in self.map { $0[idx] } }
   }
 }
