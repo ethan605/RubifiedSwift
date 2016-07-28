@@ -198,5 +198,19 @@ let match: String? = str =~ "\\w+"          // "Hello"
 let matches: [String] = str =~ "\\w+"       // ["Hello", "World"]
 ```
 
+### NSObject extensions
+
+```swift
+NSObject.performAfter(3) {
+  print("Perform after 3 seconds")
+}
+
+NSObject.performInBackground({
+  print("Perform in background")
+}) {
+  print("Perform in foreground")
+}
+```
+
 [CocoaPods]: https://cocoapods.org
 [Podfile]: https://guides.cocoapods.org/using/the-podfile.html
