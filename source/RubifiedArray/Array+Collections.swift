@@ -86,7 +86,7 @@ extension Array {
    
    - parameter separator: The string used to separate elements in result string.
    
-   - returns: The only string contains all elements converted as string.
+   - returns: The string contains all elements converted as string.
    */
   public func join(separator: String = "") -> String {
     return self.map { String($0) }.joinWithSeparator(separator)
