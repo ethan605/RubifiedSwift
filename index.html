@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="RubifiedSwift : Bunch of Swift extensions for Number, String, Array, Dictionary... inspired by Ruby-styled implementations">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>RubifiedSwift</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ethan605/RubifiedSwift">View on GitHub</a>
+
+          <h1 id="project_title">RubifiedSwift</h1>
+          <h2 id="project_tagline">Bunch of Swift extensions for Number, String, Array, Dictionary... inspired by Ruby-styled implementations</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ethan605/RubifiedSwift/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ethan605/RubifiedSwift/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="rubifiedswift" class="anchor" href="#rubifiedswift" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RubifiedSwift</h1>
+
+<h3>
+<a id="bunch-of-swift-extensions-for-number-string-array-dictionary-written-in-ruby-styled-implementations" class="anchor" href="#bunch-of-swift-extensions-for-number-string-array-dictionary-written-in-ruby-styled-implementations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations.</h3>
+
+<p>Inspired by <a href="https://github.com/supermarin/ObjectiveSugar">ObjectiveSugar</a> &amp; <a href="https://github.com/michalkonturek/RubySugar">RubySugar</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="cocoapods" class="anchor" href="#cocoapods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://cocoapods.org">Cocoapods</a>
+</h3>
+
+<p>Add the following line to your <a href="https://guides.cocoapods.org/using/the-podfile.html">Podfile</a>:</p>
+
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>RubifiedSwift<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 0.9.0<span class="pl-pds">'</span></span></pre></div>
+
+<p>Make sure to add the line <code>use_frameworks!</code> to your Podfile or target to opt into frameworks instead of static libraries.</p>
+
+<p>Then run <code>pod install</code> to install the latest version of the framework.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Most of <strong>Ruby</strong> functions are written in 2 common styles: <strong>immutable</strong> functions in normal way and <strong>mutable</strong> functions ending with exclaimation mark (<code>!</code>). Unfortunately, in <strong>Swift</strong>, <code>!</code> is reserved keyword for <strong>unwrapped</strong> values. So <strong>RubifiedSwift</strong> use <code>$</code> at the end of <strong>mutable</strong> functions to preserve <strong>Ruby</strong> style at its best.</p>
+
+<h3>
+<a id="array-extensions" class="anchor" href="#array-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Array extensions</h3>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> array <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>]
+
+array<span class="pl-k">.</span>at(<span class="pl-c1">2</span>)          <span class="pl-c">// 3</span>
+array<span class="pl-k">.</span>at(<span class="pl-c1">-3</span>)         <span class="pl-c">// 2</span>
+
+array<span class="pl-k">.</span>push(<span class="pl-c1">5</span>)               <span class="pl-c">// [1, 2, 3, 4, 5]</span>
+array<span class="pl-k">.</span>push(<span class="pl-c1">6</span>, <span class="pl-c1">7</span>)            <span class="pl-c">// [1, 2, 3, 4, 5, 6, 7]</span>
+array<span class="pl-k">.</span>unshift(<span class="pl-c1">0</span>)            <span class="pl-c">// [0, 1, 2, 3, 4, 5, 6, 7]</span>
+array<span class="pl-k">.</span>unshift(<span class="pl-c1">-2</span>, <span class="pl-c1">-1</span>)       <span class="pl-c">// [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]</span>
+
+array<span class="pl-k">.</span>pop()           <span class="pl-c">// 7</span>
+array                 <span class="pl-c">// [-2, -1, 0, 1, 2, 3, 4, 5, 6]</span>
+array<span class="pl-k">.</span>shift()         <span class="pl-c">// -2</span>
+array                 <span class="pl-c">// [-1, 0, 1, 2, 3, 4, 5, 6]</span>
+
+array<span class="pl-k">.</span><span class="pl-c1">join</span>()          <span class="pl-c">// "-10123456"</span>
+array<span class="pl-k">.</span><span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>)       <span class="pl-c">// "-1 0 1 2 3 4 5 6"</span>
+
+array<span class="pl-k">.</span><span class="pl-c1">map</span>$ { $<span class="pl-c1">0</span> <span class="pl-k">*</span> <span class="pl-c1">2</span> }
+array                 <span class="pl-c">// [-2, 0, 2, 4, 6, 8, 10, 12]</span>
+
+array<span class="pl-k">.</span>select { $<span class="pl-c1">0</span> <span class="pl-k">%</span> <span class="pl-c1">3</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }      <span class="pl-c">// [6, 12]</span>
+<span class="pl-k">var</span> arr <span class="pl-k">=</span> array
+arr<span class="pl-k">.</span>select$ { $<span class="pl-c1">0</span> <span class="pl-k">%</span> <span class="pl-c1">3</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }
+arr                               <span class="pl-c">// [6, 12]</span>
+
+array<span class="pl-k">.</span>reject { $<span class="pl-c1">0</span> <span class="pl-k">%</span> <span class="pl-c1">4</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }      <span class="pl-c">// [-2, 2, 6, 10]</span>
+arr <span class="pl-k">=</span> array
+arr<span class="pl-k">.</span>reject$ { $<span class="pl-c1">0</span> <span class="pl-k">%</span> <span class="pl-c1">4</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }
+arr                               <span class="pl-c">// [-2, 2, 6, 10]</span>
+
+arr <span class="pl-k">=</span> array
+arr<span class="pl-k">.</span>deleteIf { $<span class="pl-c1">0</span> <span class="pl-k">%</span> <span class="pl-c1">5</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }
+arr                               <span class="pl-c">// [-2, 2, 4, 6, 8, 12]</span>
+
+arr <span class="pl-k">=</span> array
+arr<span class="pl-k">.</span>keepIf { $<span class="pl-c1">0</span> <span class="pl-k">%</span> <span class="pl-c1">5</span> <span class="pl-k">==</span> <span class="pl-c1">0</span> }
+arr                               <span class="pl-c">// [0, 10]</span>
+
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>]<span class="pl-k">.</span>permutation()           <span class="pl-c">// [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]</span>
+
+array<span class="pl-k">.</span><span class="pl-c1">max</span>()                       <span class="pl-c">// 12</span>
+array<span class="pl-k">.</span><span class="pl-c1">min</span>()                       <span class="pl-c">// -2</span>
+
+arr <span class="pl-k">=</span> array
+arr<span class="pl-k">.</span>delete(<span class="pl-c1">5</span>)                     <span class="pl-c">// nil</span>
+arr<span class="pl-k">.</span>delete(<span class="pl-c1">2</span>)                     <span class="pl-c">// Optional(2)</span>
+
+arr <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">4</span>]
+arr<span class="pl-k">.</span>uniq()                       <span class="pl-c">// [1, 2, 3, 4]</span>
+arr<span class="pl-k">.</span>uniq$()
+arr                              <span class="pl-c">// [1, 2, 3, 4]</span>
+
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>]<span class="pl-k">.</span>eachWithIndex { (element, index) <span class="pl-k">in</span>
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pse">\(</span><span class="pl-s1">index</span><span class="pl-pse">)</span>. <span class="pl-pse">\(</span><span class="pl-s1">element</span><span class="pl-pse">)</span><span class="pl-pds">"</span></span>)
+}
+
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>]<span class="pl-k">.</span>mapWithIndex { (element, index) <span class="pl-k">in</span>
+  index <span class="pl-k">*</span> element
+}                                 <span class="pl-c">// [0, 2, 6, 12]</span>
+
+arr <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>]
+arr <span class="pl-k">&lt;&lt;</span> <span class="pl-c1">5</span>                          <span class="pl-c">// [1, 2, 3, 4, 5]</span>
+
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>] <span class="pl-k">|</span> [<span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>]       <span class="pl-c">// [1, 2, 3, 4, 5, 6]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>] <span class="pl-k">&amp;</span> [<span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>]       <span class="pl-c">// [3, 4]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>] <span class="pl-k">-</span> [<span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>]       <span class="pl-c">// [1, 2]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>] <span class="pl-k">^</span> [<span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>]       <span class="pl-c">// [1, 2, 5, 6]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>] <span class="pl-k">*</span> [<span class="pl-c1">3</span>, <span class="pl-c1">4</span>]                   <span class="pl-c">// [[1, 3], [1, 4], [2, 3], [2, 4]]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>] <span class="pl-k">*</span> <span class="pl-c1">3</span>                        <span class="pl-c">// [1, 2, 1, 2, 1, 2]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>] <span class="pl-k">*</span> <span class="pl-s"><span class="pl-pds">"</span>, <span class="pl-pds">"</span></span>               <span class="pl-c">// "1, 2, 3, 4"</span>
+
+[[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>], [<span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>]]<span class="pl-k">.</span>transpose()  <span class="pl-c">// [[1, 4], [2, 5], [3, 6]]</span>
+
+<span class="pl-k">let</span> sub1 <span class="pl-k">=</span> [<span class="pl-c1">4</span>, <span class="pl-c1">5</span>]
+<span class="pl-k">let</span> sub2: [<span class="pl-c1">Any</span>?] <span class="pl-k">=</span> [<span class="pl-c1">8</span>, <span class="pl-c1">nil</span>]
+<span class="pl-k">let</span> sub3: [<span class="pl-c1">Any</span>?] <span class="pl-k">=</span> [<span class="pl-c1">nil</span>]
+<span class="pl-k">let</span> sub4: [<span class="pl-c1">Any</span>?] <span class="pl-k">=</span> [<span class="pl-c1">7</span>, sub2, [<span class="pl-c1">9</span>], sub3]
+<span class="pl-k">var</span> arr: [<span class="pl-c1">Any</span>?] <span class="pl-k">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, sub1, <span class="pl-c1">6</span>, sub4]
+
+array<span class="pl-k">.</span>unwrapped()                <span class="pl-c">// [1, 2, [4, 5], 6, [Optional(7), Optional([Optional(8), nil]), Optional([9]), Optional([nil])]]</span>
+array<span class="pl-k">.</span>deepUnwrapped()            <span class="pl-c">// [1, 2, [4, 5], 6, 7, [9]]</span>
+
+array<span class="pl-k">.</span>compact()                  <span class="pl-c">// [Optional(1), Optional(2), Optional([4, 5]), Optional(6), Optional([Optional(7), Optional([Optional(8), nil]), Optional([9]), Optional([nil])])]</span>
+array<span class="pl-k">.</span>deepCompact()              <span class="pl-c">// [Optional(1), Optional(2), Optional([4, 5]), Optional(6), Optional(7), Optional(8), Optional([9])]</span>
+
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span>]<span class="pl-k">.</span>rotate()    <span class="pl-c">// ["b", "c", "d", "a"]</span>
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span>]<span class="pl-k">.</span>rotate(<span class="pl-c1">-2</span>)  <span class="pl-c">// ["c", "d", "a", "b"]</span>
+
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span>]<span class="pl-k">.</span>sample()    <span class="pl-c">// "c"</span>
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>d<span class="pl-pds">"</span></span>]<span class="pl-k">.</span>shuffle()   <span class="pl-c">// ["b", "c", "d", "a"]</span></pre></div>
+
+<h3>
+<a id="number-extensions" class="anchor" href="#number-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Number extensions</h3>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-c1">1</span><span class="pl-k">.</span><span class="pl-c1">0</span><span class="pl-k">.</span><span class="pl-c1">abs</span>()         <span class="pl-c">// 1.0</span>
+<span class="pl-c1">-1</span><span class="pl-k">.</span><span class="pl-c1">0</span><span class="pl-k">.</span><span class="pl-c1">abs</span>()        <span class="pl-c">// 1.0</span>
+
+<span class="pl-c1">7</span><span class="pl-k">.</span>seconds()       <span class="pl-c">// 7.0</span>
+<span class="pl-c1">6</span><span class="pl-k">.</span>minutes()       <span class="pl-c">// 360.0</span>
+<span class="pl-c1">5</span><span class="pl-k">.</span>hours()         <span class="pl-c">// 18000.0</span>
+<span class="pl-c1">4</span><span class="pl-k">.</span>days()          <span class="pl-c">// 345600.0</span>
+<span class="pl-c1">3</span><span class="pl-k">.</span>weeks()         <span class="pl-c">// 1814400.0</span>
+<span class="pl-c1">2</span><span class="pl-k">.</span>months()        <span class="pl-c">// 5184000.0</span>
+<span class="pl-c1">1</span><span class="pl-k">.</span>years()         <span class="pl-c">// 31536000.0</span>
+
+<span class="pl-c1">3</span><span class="pl-k">.</span>hours()<span class="pl-k">.</span>ago()
+<span class="pl-c1">3</span><span class="pl-k">.</span>hours()<span class="pl-k">.</span>sinceNow()
+
+<span class="pl-k">let</span> time <span class="pl-k">=</span> <span class="pl-c1">3</span><span class="pl-k">.</span>hours()<span class="pl-k">.</span>ago()
+<span class="pl-c1">3</span><span class="pl-k">.</span>hours()<span class="pl-k">.</span>until(time)
+<span class="pl-c1">3</span><span class="pl-k">.</span>hours()<span class="pl-k">.</span>since(time)
+
+<span class="pl-c1">5</span><span class="pl-k">.</span>times()         <span class="pl-c">// [0, 1, 2, 3, 4, 5]</span>
+<span class="pl-c1">5</span><span class="pl-k">.</span>times {
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Invoke callback<span class="pl-pds">"</span></span>)
+}
+
+<span class="pl-c1">3</span><span class="pl-k">.</span>upTo(<span class="pl-c1">5</span>)         <span class="pl-c">// [3, 4, 5]</span>
+<span class="pl-c1">3</span><span class="pl-k">.</span>upTo(<span class="pl-c1">5</span>) {
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Invoke callback<span class="pl-pds">"</span></span>)
+}
+
+<span class="pl-c1">3</span><span class="pl-k">.</span>downTo(<span class="pl-c1">1</span>)       <span class="pl-c">// [3, 2, 1]</span>
+<span class="pl-c1">3</span><span class="pl-k">.</span>downTo(<span class="pl-c1">1</span>) {
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Invoke callback<span class="pl-pds">"</span></span>)
+}
+
+<span class="pl-c1">1</span><span class="pl-k">.</span><span class="pl-c1">next</span>()          <span class="pl-c">// 2</span>
+<span class="pl-c1">1</span><span class="pl-k">.</span>pred()          <span class="pl-c">// 0</span>
+
+<span class="pl-c1">1</span><span class="pl-k">.</span><span class="pl-c1">abs</span>()           <span class="pl-c">// 1</span>
+<span class="pl-c1">-1</span><span class="pl-k">.</span><span class="pl-c1">abs</span>()          <span class="pl-c">// 1</span>
+
+<span class="pl-c1">15</span><span class="pl-k">.</span>toF()           <span class="pl-c">// 15.0</span>
+<span class="pl-c1">15</span><span class="pl-k">.</span>toS()           <span class="pl-c">// "15"</span>
+<span class="pl-c1">75</span><span class="pl-k">.</span>toS(<span class="pl-c1">2</span>)          <span class="pl-c">// "1001011"</span>
+<span class="pl-c1">75</span><span class="pl-k">.</span>toS(<span class="pl-c1">8</span>)          <span class="pl-c">// "113"</span>
+<span class="pl-c1">75</span><span class="pl-k">.</span>toS(<span class="pl-c1">16</span>)                        <span class="pl-c">// "4B"</span>
+<span class="pl-c1">75</span><span class="pl-k">.</span>toS(<span class="pl-c1">16</span>, uppercase: <span class="pl-c1">false</span>)      <span class="pl-c">// "4b"</span>
+
+<span class="pl-c1">3</span><span class="pl-k">.</span>isEven()         <span class="pl-c">// false</span>
+<span class="pl-c1">3</span><span class="pl-k">.</span>isOdd()          <span class="pl-c">// true</span>
+
+<span class="pl-c1">21</span><span class="pl-k">.</span>gcd(<span class="pl-c1">6</span>)          <span class="pl-c">// 3</span>
+<span class="pl-c1">21</span><span class="pl-k">.</span>lcm(<span class="pl-c1">6</span>)          <span class="pl-c">// 42</span></pre></div>
+
+<h3>
+<a id="string-extensions" class="anchor" href="#string-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>String extensions</h3>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">var</span> str <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Hello, World!<span class="pl-pds">"</span></span>
+
+str<span class="pl-k">.</span><span class="pl-c1">length</span>          <span class="pl-c">// 13</span>
+str[<span class="pl-c1">1</span>]              <span class="pl-c">// "e"</span>
+str[<span class="pl-c1">-1</span>]             <span class="pl-c">// "!"</span>
+str[<span class="pl-c1">1</span><span class="pl-k">...</span><span class="pl-c1">4</span>]          <span class="pl-c">// "ello"</span>
+
+str<span class="pl-k">.</span><span class="pl-c1">reverse</span>()       <span class="pl-c">// "!dlroW ,olleH"</span>
+
+str<span class="pl-k">.</span><span class="pl-c1">split</span>()         <span class="pl-c">// ["H", "e", "l", "l", "o", ",", " ", "W", "o", "r", "l", "d", "!"]</span>
+str<span class="pl-k">.</span><span class="pl-c1">split</span>(<span class="pl-s"><span class="pl-pds">"</span>, <span class="pl-pds">"</span></span>)     <span class="pl-c">// ["Hello", "World!"]</span>
+
+str<span class="pl-k">.</span>index(<span class="pl-s"><span class="pl-pds">"</span>l<span class="pl-pds">"</span></span>)      <span class="pl-c">// 2</span>
+
+str <span class="pl-k">*</span> <span class="pl-c1">2</span>                   <span class="pl-c">// "Hello, World!Hello, World!"</span>
+str <span class="pl-k">&lt;&lt;</span> <span class="pl-s"><span class="pl-pds">"</span> You're good<span class="pl-pds">"</span></span>     <span class="pl-c">// "Hello, World! You're good"</span>
+str <span class="pl-k">&lt;&lt;</span> <span class="pl-c1">33</span>                 <span class="pl-c">// "Hello, World! You're good!"</span>
+
+<span class="pl-k">let</span> match: <span class="pl-c1">String</span>? <span class="pl-k">=</span> str <span class="pl-k">=~</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\\</span>w+<span class="pl-pds">"</span></span>          <span class="pl-c">// "Hello"</span>
+<span class="pl-k">let</span> matches: [<span class="pl-c1">String</span>] <span class="pl-k">=</span> str <span class="pl-k">=~</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\\</span>w+<span class="pl-pds">"</span></span>       <span class="pl-c">// ["Hello", "World"]</span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">RubifiedSwift maintained by <a href="https://github.com/ethan605">ethan605</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
