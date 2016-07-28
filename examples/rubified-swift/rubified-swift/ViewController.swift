@@ -67,10 +67,12 @@ class ViewController: UIViewController {
     let sub2: [Any?] = [8, nil]
     let sub3: [Any?] = [nil]
     let sub4: [Any?] = [7, sub2, [9], sub3]
-    var array1: [Any?] = [1, 2, sub1, 6, sub4, nil]
+    var array1: [Any?] = [1, 2, sub1, 6, sub4]
     
     print("\tUnwrapped array: \(array1.unwrapped() ?? [])")
+    print("\tDeep unwrapped array: \(array1.deepUnwrapped() ?? [])")
     print("\tCompacted array: \(array1.compact())")
+    print("\tDeep compacted array: \(array1.deepCompact())")
     print("\tCompacted & Unwrapped array: \(array1.compact().unwrapped() ?? [])")
     array1.compact$()
     print("\tCompacted array (mutate): \(array1)")
