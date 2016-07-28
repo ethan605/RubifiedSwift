@@ -21,8 +21,8 @@ extension Optional: OptionalType {
 }
 
 /**
- Extensions for Array
- Set of extended methods for Optional elements manipulation
+ Set of extended methods for Array manipulations deal with
+ ArrayType, Optional, Comparable & Equatable elements.
  */
 extension Array where Element: OptionalType {
   /**

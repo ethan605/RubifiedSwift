@@ -9,7 +9,8 @@
 import Foundation
 
 /**
- 
+ Set of extended methods for Array manipulations deal with
+ ArrayType, Optional, Comparable & Equatable elements.
  */
 extension Array {
   /**

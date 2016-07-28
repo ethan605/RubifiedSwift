@@ -9,7 +9,6 @@
 import Foundation
 
 /**
- Extensions for NSObject
  Set of extended methods deal with Objective-C's Grand Central Dispatch mechanism
  */
 extension NSObject {

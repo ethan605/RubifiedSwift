@@ -9,8 +9,7 @@
 import Foundation
 
 /**
- Extensions for Double
- Set of extended methods for time conversions
+ Set of extended methods for Double type numerics manipulations & time conversions.
  */
 extension Double {
   /**

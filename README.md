@@ -19,7 +19,7 @@ Then run `pod install` to install the latest version of the framework.
 
 ## Usage
 
-Most of **Ruby** functions are written in 2 common styles: **immutable** functions in normal way and **mutable** functions ending with exclaimation mark (`!`). Unfortunately, in **Swift**, `!` is reserved keyword for **unwrapped** values. So **RubifiedSwift** use `$` at the end of **mutable** functions to preserve **Ruby** style at its best.
+Most of **Ruby** functions are written in 2 common styles: **immutable** functions in normal way and **mutable** functions ending with exclaimation mark (`!`). Unfortunately, in **Swift**, `!` is reserved keyword for **unwrapped** values. So **RubifiedSwift** uses `$` at the end of **mutable** functions to preserve **Ruby** style at its best.
 
 ### Array extensions
 

@@ -9,8 +9,7 @@
 import Foundation
 
 /**
- Extensions for String
- Set of extended methods for String type manipulations
+ Set of extended methods for String type manipulations.
  */
 extension String {
   /**

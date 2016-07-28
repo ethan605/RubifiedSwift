@@ -9,8 +9,7 @@
 import Foundation
 
 /**
- Extensions for Int
- Set of extended methods for Int type numerics manipulations
+ Set of extended methods for Int type numerics manipulations & time conversions.
  */
 extension Int {
   /**

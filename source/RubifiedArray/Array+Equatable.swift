@@ -9,8 +9,8 @@
 import Foundation
 
 /**
- Extensions for Array
- Set of extended methods for Equatable elements manipulation
+ Set of extended methods for Array manipulations deal with
+ ArrayType, Optional, Comparable & Equatable elements.
  */
 extension Array where Element: Equatable {
   /**
