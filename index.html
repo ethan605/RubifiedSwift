@@ -48,7 +48,7 @@
 
 <p>Add the following line to your <a href="https://guides.cocoapods.org/using/the-podfile.html">Podfile</a>:</p>
 
-<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>RubifiedSwift<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 0.9.0<span class="pl-pds">'</span></span></pre></div>
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>RubifiedSwift<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 0.9<span class="pl-pds">'</span></span></pre></div>
 
 <p>Make sure to add the line <code>use_frameworks!</code> to your Podfile or target to opt into frameworks instead of static libraries.</p>
 
@@ -232,6 +232,19 @@ str <span class="pl-k">&lt;&lt;</span> <span class="pl-c1">33</span>            
 
 <span class="pl-k">let</span> match: <span class="pl-c1">String</span>? <span class="pl-k">=</span> str <span class="pl-k">=~</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\\</span>w+<span class="pl-pds">"</span></span>          <span class="pl-c">// "Hello"</span>
 <span class="pl-k">let</span> matches: [<span class="pl-c1">String</span>] <span class="pl-k">=</span> str <span class="pl-k">=~</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\\</span>w+<span class="pl-pds">"</span></span>       <span class="pl-c">// ["Hello", "World"]</span></pre></div>
+
+<h3>
+<a id="nsobject-extensions" class="anchor" href="#nsobject-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NSObject extensions</h3>
+
+<div class="highlight highlight-source-swift"><pre>NSObject<span class="pl-k">.</span>performAfter(<span class="pl-c1">3</span>) {
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Perform after 3 seconds<span class="pl-pds">"</span></span>)
+}
+
+NSObject<span class="pl-k">.</span>performInBackground({
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Perform in background<span class="pl-pds">"</span></span>)
+}) {
+  <span class="pl-c1">print</span>(<span class="pl-s"><span class="pl-pds">"</span>Perform in foreground<span class="pl-pds">"</span></span>)
+}</pre></div>
       </section>
     </div>
 
