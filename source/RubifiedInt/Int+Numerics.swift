@@ -10,7 +10,7 @@ import Foundation
 
 /**
  Extensions for Int
- Set of extended methods for Int type numerics manipulation
+ Set of extended methods for Int type numerics manipulations
  */
 extension Int {
   /**
