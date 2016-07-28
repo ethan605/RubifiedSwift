@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     Inspired by ObjectiveSugar (https://github.com/supermarin/ObjectiveSugar) & RubySugar (https://github.com/michalkonturek/RubySugar)
                    DESC
 
-  s.homepage     = "https://github.com/ethan605/rubified-swift"
+  s.homepage     = "https://github.com/ethan605/RubifiedSwift"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ethan605/rubified-swift.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/ethan605/RubifiedSwift.git", :tag => "#{s.version}" }
 
   s.source_files  = "source", "source/**/*.swift"
   # s.exclude_files = "source/exclude"
