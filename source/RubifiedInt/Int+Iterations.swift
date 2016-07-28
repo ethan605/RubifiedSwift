@@ -8,18 +8,47 @@
 
 import Foundation
 
-// Iteration extensions
+/**
+ Extensions for Int
+ Set of extended methods for iterations
+ */
 extension Int {
+  /**
+   Construct and returns an array of integers from 0 up to `self-1`
+   and call a block (without index) for each element.
+   
+   - parameter callback: The callback to be called for each element. This param can be omitted.
+   
+   - returns: Array of integers from 0 to `self-1`
+   */
   public func times(callback: (() -> Void)? = nil) -> [Int] {
     return self <= 0 ? [] : _buildArray(0, self, callback)
   }
 
-  public func upTo(index: Int, _ callback: (() -> Void)? = nil) -> [Int] {
-    return index < self ? [] : _buildArray(self, index+1, callback)
+  /**
+   Construct and returns an array of integers from `self` up to a given `limit`
+   and call a block (without index) for each element.
+   
+   - parameter limit: The upper limit.
+   - parameter callback: The callback to be called for each element. This param can be omitted.
+   
+   - returns: Array of integers from `self` up to `limit`
+   */
+  public func upTo(limit: Int, _ callback: (() -> Void)? = nil) -> [Int] {
+    return limit < self ? [] : _buildArray(self, limit+1, callback)
   }
   
-  public func downTo(index: Int, _ callback: (() -> Void)? = nil) -> [Int] {
-    return index >= self ? [] : _buildArray(self, index-1, callback)
+  /**
+   Construct and returns an array of integers from `self` down to a given `limit`
+   and call a block (without index) for each element.
+   
+   - parameter limit: The lower limit.
+   - parameter callback: The callback to be called for each element. This param can be omitted.
+   
+   - returns: Array of integers from `self` down to `limit`
+   */
+  public func downTo(limit: Int, _ callback: (() -> Void)? = nil) -> [Int] {
+    return limit >= self ? [] : _buildArray(self+1, limit, callback)
   }
   
   // Private methods
