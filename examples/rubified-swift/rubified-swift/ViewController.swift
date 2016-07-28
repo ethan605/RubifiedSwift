@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RubifiedSwift
 
 class ViewController: UIViewController {
   override func viewDidLoad() {

@@ -1,0 +1,12 @@
+PODS:
+  - RubifiedSwift (0.9.1)
+
+DEPENDENCIES:
+  - RubifiedSwift (~> 0.9)
+
+SPEC CHECKSUMS:
+  RubifiedSwift: 10aeb39fba470fd7ae3eab9b661493859358f360
+
+PODFILE CHECKSUM: 33029976ec083d33606d2ce4b86db8e3a56a4608
+
+COCOAPODS: 1.0.1

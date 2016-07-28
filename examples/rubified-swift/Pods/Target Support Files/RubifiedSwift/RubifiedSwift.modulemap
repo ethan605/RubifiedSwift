@@ -1,0 +1,6 @@
+framework module RubifiedSwift {
+  umbrella header "RubifiedSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

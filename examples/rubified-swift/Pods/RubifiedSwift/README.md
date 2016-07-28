@@ -10,7 +10,7 @@ Inspired by [ObjectiveSugar](https://github.com/supermarin/ObjectiveSugar) & [Ru
 Add the following line to your [Podfile][]:
 
 ````ruby
-pod 'RubifiedSwift', '~> 0.9'
+pod 'RubifiedSwift', '~> 0.9.0'
 ````
 
 Make sure to add the line `use_frameworks!` to your Podfile or target to opt into frameworks instead of static libraries.

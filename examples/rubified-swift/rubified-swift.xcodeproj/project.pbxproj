@@ -7,29 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09D0EBB40A6D1B2347F5DCDC /* Pods_rubified_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313DD7E032FF904339ECF324 /* Pods_rubified_swift.framework */; };
 		CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D801D4205C0009232C3 /* AppDelegate.swift */; };
 		CA788D831D4205C0009232C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA788D821D4205C0009232C3 /* ViewController.swift */; };
 		CA788D861D4205C0009232C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D841D4205C0009232C3 /* Main.storyboard */; };
 		CA788D881D4205C0009232C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA788D871D4205C0009232C3 /* Assets.xcassets */; };
 		CA788D8B1D4205C0009232C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA788D891D4205C0009232C3 /* LaunchScreen.storyboard */; };
-		CA939EDB1D48D0EE00B84CEB /* NSObject+GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ECC1D48D0EE00B84CEB /* NSObject+GCD.swift */; };
-		CA939EDC1D48D0EE00B84CEB /* Array+Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */; };
-		CA939EDD1D48D0EE00B84CEB /* Array+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */; };
-		CA939EDE1D48D0EE00B84CEB /* Array+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */; };
-		CA939EDF1D48D0EE00B84CEB /* Double+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED21D48D0EE00B84CEB /* Double+Numerics.swift */; };
-		CA939EE01D48D0EE00B84CEB /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED31D48D0EE00B84CEB /* Double+Time.swift */; };
-		CA939EE11D48D0EE00B84CEB /* Int+Iterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED51D48D0EE00B84CEB /* Int+Iterations.swift */; };
-		CA939EE21D48D0EE00B84CEB /* Int+Numerics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED61D48D0EE00B84CEB /* Int+Numerics.swift */; };
-		CA939EE31D48D0EE00B84CEB /* Int+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED71D48D0EE00B84CEB /* Int+Time.swift */; };
-		CA939EE41D48D0EE00B84CEB /* String+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */; };
-		CA939EE51D48D0EE00B84CEB /* String+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */; };
-		CAAAD93C1D49CD760093ABD2 /* Array+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD93B1D49CD760093ABD2 /* Array+Optional.swift */; };
-		CAAAD93E1D49CE020093ABD2 /* Array+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD93D1D49CE020093ABD2 /* Array+Equatable.swift */; };
-		CAAAD9401D49CE1C0093ABD2 /* Array+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD93F1D49CE1C0093ABD2 /* Array+Comparable.swift */; };
-		CAAAD9421D49CE290093ABD2 /* Array+ArrayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD9411D49CE290093ABD2 /* Array+ArrayType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		313DD7E032FF904339ECF324 /* Pods_rubified_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rubified_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		683DCAC6A56B5CA15AB38D2E /* Pods-rubified-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rubified-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rubified-swift/Pods-rubified-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		A2B0E40CE314E35E7FF83CDE /* Pods-rubified-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rubified-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-rubified-swift/Pods-rubified-swift.release.xcconfig"; sourceTree = "<group>"; };
 		CA788D7D1D4205C0009232C3 /* rubified-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rubified-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA788D801D4205C0009232C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA788D821D4205C0009232C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,21 +26,6 @@
 		CA788D871D4205C0009232C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA788D8A1D4205C0009232C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA788D8C1D4205C0009232C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA939ECC1D48D0EE00B84CEB /* NSObject+GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+GCD.swift"; sourceTree = "<group>"; };
-		CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Collections.swift"; sourceTree = "<group>"; };
-		CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Iterations.swift"; sourceTree = "<group>"; };
-		CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Operators.swift"; sourceTree = "<group>"; };
-		CA939ED21D48D0EE00B84CEB /* Double+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Numerics.swift"; sourceTree = "<group>"; };
-		CA939ED31D48D0EE00B84CEB /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
-		CA939ED51D48D0EE00B84CEB /* Int+Iterations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Iterations.swift"; sourceTree = "<group>"; };
-		CA939ED61D48D0EE00B84CEB /* Int+Numerics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Numerics.swift"; sourceTree = "<group>"; };
-		CA939ED71D48D0EE00B84CEB /* Int+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Time.swift"; sourceTree = "<group>"; };
-		CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Manipulations.swift"; sourceTree = "<group>"; };
-		CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operators.swift"; sourceTree = "<group>"; };
-		CAAAD93B1D49CD760093ABD2 /* Array+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Optional.swift"; sourceTree = "<group>"; };
-		CAAAD93D1D49CE020093ABD2 /* Array+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Equatable.swift"; sourceTree = "<group>"; };
-		CAAAD93F1D49CE1C0093ABD2 /* Array+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Comparable.swift"; sourceTree = "<group>"; };
-		CAAAD9411D49CE290093ABD2 /* Array+ArrayType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ArrayType.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D0EBB40A6D1B2347F5DCDC /* Pods_rubified_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FD079542B3C3B6F9FA2DEEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				683DCAC6A56B5CA15AB38D2E /* Pods-rubified-swift.debug.xcconfig */,
+				A2B0E40CE314E35E7FF83CDE /* Pods-rubified-swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90C9E24ED64604B1892C6A9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				313DD7E032FF904339ECF324 /* Pods_rubified_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA788D741D4205C0009232C3 = {
 			isa = PBXGroup;
 			children = (
 				CA788D7F1D4205C0009232C3 /* rubified-swift */,
 				CA788D7E1D4205C0009232C3 /* Products */,
+				6FD079542B3C3B6F9FA2DEEC /* Pods */,
+				90C9E24ED64604B1892C6A9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,7 +78,6 @@
 		CA788D7F1D4205C0009232C3 /* rubified-swift */ = {
 			isa = PBXGroup;
 			children = (
-				CA939ECA1D48D0EE00B84CEB /* source */,
 				CA788D801D4205C0009232C3 /* AppDelegate.swift */,
 				CA788D821D4205C0009232C3 /* ViewController.swift */,
 				CA788D841D4205C0009232C3 /* Main.storyboard */,
@@ -95,69 +88,6 @@
 			path = "rubified-swift";
 			sourceTree = "<group>";
 		};
-		CA939ECA1D48D0EE00B84CEB /* source */ = {
-			isa = PBXGroup;
-			children = (
-				CA939ECB1D48D0EE00B84CEB /* Other */,
-				CA939ECD1D48D0EE00B84CEB /* RubifiedArray */,
-				CA939ED11D48D0EE00B84CEB /* RubifiedDouble */,
-				CA939ED41D48D0EE00B84CEB /* RubifiedInt */,
-				CA939ED81D48D0EE00B84CEB /* RubifiedString */,
-			);
-			name = source;
-			path = ../../../source;
-			sourceTree = "<group>";
-		};
-		CA939ECB1D48D0EE00B84CEB /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				CA939ECC1D48D0EE00B84CEB /* NSObject+GCD.swift */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		CA939ECD1D48D0EE00B84CEB /* RubifiedArray */ = {
-			isa = PBXGroup;
-			children = (
-				CAAAD9411D49CE290093ABD2 /* Array+ArrayType.swift */,
-				CA939ECE1D48D0EE00B84CEB /* Array+Collections.swift */,
-				CAAAD93F1D49CE1C0093ABD2 /* Array+Comparable.swift */,
-				CAAAD93D1D49CE020093ABD2 /* Array+Equatable.swift */,
-				CA939ECF1D48D0EE00B84CEB /* Array+Iterations.swift */,
-				CA939ED01D48D0EE00B84CEB /* Array+Operators.swift */,
-				CAAAD93B1D49CD760093ABD2 /* Array+Optional.swift */,
-			);
-			path = RubifiedArray;
-			sourceTree = "<group>";
-		};
-		CA939ED11D48D0EE00B84CEB /* RubifiedDouble */ = {
-			isa = PBXGroup;
-			children = (
-				CA939ED21D48D0EE00B84CEB /* Double+Numerics.swift */,
-				CA939ED31D48D0EE00B84CEB /* Double+Time.swift */,
-			);
-			path = RubifiedDouble;
-			sourceTree = "<group>";
-		};
-		CA939ED41D48D0EE00B84CEB /* RubifiedInt */ = {
-			isa = PBXGroup;
-			children = (
-				CA939ED51D48D0EE00B84CEB /* Int+Iterations.swift */,
-				CA939ED61D48D0EE00B84CEB /* Int+Numerics.swift */,
-				CA939ED71D48D0EE00B84CEB /* Int+Time.swift */,
-			);
-			path = RubifiedInt;
-			sourceTree = "<group>";
-		};
-		CA939ED81D48D0EE00B84CEB /* RubifiedString */ = {
-			isa = PBXGroup;
-			children = (
-				CA939ED91D48D0EE00B84CEB /* String+Manipulations.swift */,
-				CA939EDA1D48D0EE00B84CEB /* String+Operators.swift */,
-			);
-			path = RubifiedString;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA788D8F1D4205C0009232C3 /* Build configuration list for PBXNativeTarget "rubified-swift" */;
 			buildPhases = (
+				B41E860BD6C26C7637444896 /* [CP] Check Pods Manifest.lock */,
 				CA788D791D4205C0009232C3 /* Sources */,
 				CA788D7A1D4205C0009232C3 /* Frameworks */,
 				CA788D7B1D4205C0009232C3 /* Resources */,
+				804A3B72E14480CAC02EF247 /* [CP] Embed Pods Frameworks */,
+				0C6728E264674552C6552FCE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,28 +157,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C6728E264674552C6552FCE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rubified-swift/Pods-rubified-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		804A3B72E14480CAC02EF247 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rubified-swift/Pods-rubified-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B41E860BD6C26C7637444896 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA788D791D4205C0009232C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA939EE51D48D0EE00B84CEB /* String+Operators.swift in Sources */,
-				CAAAD9401D49CE1C0093ABD2 /* Array+Comparable.swift in Sources */,
 				CA788D831D4205C0009232C3 /* ViewController.swift in Sources */,
-				CA939EE01D48D0EE00B84CEB /* Double+Time.swift in Sources */,
-				CAAAD93E1D49CE020093ABD2 /* Array+Equatable.swift in Sources */,
-				CA939EE31D48D0EE00B84CEB /* Int+Time.swift in Sources */,
-				CAAAD9421D49CE290093ABD2 /* Array+ArrayType.swift in Sources */,
-				CA939EE41D48D0EE00B84CEB /* String+Manipulations.swift in Sources */,
-				CA939EDD1D48D0EE00B84CEB /* Array+Iterations.swift in Sources */,
-				CAAAD93C1D49CD760093ABD2 /* Array+Optional.swift in Sources */,
-				CA939EDB1D48D0EE00B84CEB /* NSObject+GCD.swift in Sources */,
-				CA939EDE1D48D0EE00B84CEB /* Array+Operators.swift in Sources */,
 				CA788D811D4205C0009232C3 /* AppDelegate.swift in Sources */,
-				CA939EDC1D48D0EE00B84CEB /* Array+Collections.swift in Sources */,
-				CA939EE21D48D0EE00B84CEB /* Int+Numerics.swift in Sources */,
-				CA939EE11D48D0EE00B84CEB /* Int+Iterations.swift in Sources */,
-				CA939EDF1D48D0EE00B84CEB /* Double+Numerics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +322,7 @@
 		};
 		CA788D901D4205C0009232C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683DCAC6A56B5CA15AB38D2E /* Pods-rubified-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "rubified-swift/Info.plist";
@@ -367,6 +334,7 @@
 		};
 		CA788D911D4205C0009232C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B0E40CE314E35E7FF83CDE /* Pods-rubified-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "rubified-swift/Info.plist";
