@@ -1,5 +1,5 @@
 //
-//  Array+Elements.swift
+//  Array+Collections.swift
 //  rubified-swift
 //
 //  Created by Ethan Nguyen on 7/23/16.
@@ -201,6 +201,8 @@ extension Array {
     self._permutate(source, &result)
     return result
   }
+  
+  // Private methods
   
   private func _permutate(source: [Element], inout _ result: [[Element]]) {
     var a = source            // Duplicate source as new array

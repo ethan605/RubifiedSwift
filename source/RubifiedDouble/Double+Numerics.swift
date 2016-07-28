@@ -8,6 +8,15 @@
 
 import Foundation
 
+/**
+ Extensions for Double
+ Set of extended methods for Double type numerics manipulation
+ */
 extension Double {
+  /**
+   Returns the absolute value of `self`
+   
+   - returns: The absolute value of this double itself.
+   */
   public func abs() -> UInt { return self > 0 ? UInt(self) : UInt(-self) }
 }
