@@ -33,7 +33,7 @@ extension Array where Element: OptionalType {
    */
   public func unwrapped() -> [Element.Wrapped]? {
     return self.reduce(Optional<[Element.Wrapped]>([])) { (reduced, element) in
-      element.optional.flatMap { reduced! + [$0] }
+      reduced.flatMap { (arr) in element.optional.map { arr + [$0] } }
     }
   }
   
