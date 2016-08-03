@@ -1,3 +1,5 @@
+![RubifiedSwift logo][Logo Url] ![RubifiedSwift title][Title Url]
+
 # RubifiedSwift
 ### Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations.
 
@@ -212,5 +214,7 @@ NSObject.performInBackground({
 }
 ```
 
+[Logo Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo.png
+[Title Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-title.png
 [CocoaPods]: https://cocoapods.org
 [Podfile]: https://guides.cocoapods.org/using/the-podfile.html
