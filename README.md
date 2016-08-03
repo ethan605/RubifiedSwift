@@ -1,4 +1,7 @@
 ![RubifiedSwift logo][Logo Url] ![RubifiedSwift title][Title Url]
+
+# RubifiedSwift #
+![Cocoapods version][Version Url] ![Cocoapods platform][Platform Url] ![License: MIT][License Url]
 ### Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations.
 
 Inspired by [ObjectiveSugar](https://github.com/supermarin/ObjectiveSugar) & [RubySugar](https://github.com/michalkonturek/RubySugar)
@@ -218,8 +221,11 @@ NSObject.performInBackground({
 * Find a way to re-structure whole project
 * Anyone one who interesting with this project please feel free to open an issue. We'll discuss more detailed.
 
-[Logo Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo-small.png
-[Title Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-title-small.png
+[Logo Url]:       https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo-small.png
+[Title Url]:      https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-title-small.png
+[License Url]:    https://img.shields.io/cocoapods/l/RubifiedSwift.svg?style=flat
+[Version Url]:    https://img.shields.io/cocoapods/v/RubifiedSwift.svg?style=flat
+[Platform Url]:   https://img.shields.io/cocoapods/p/RubifiedSwift.svg?style=flat
 
-[CocoaPods]: https://cocoapods.org
-[Podfile]: https://guides.cocoapods.org/using/the-podfile.html
+[CocoaPods]:      https://cocoapods.org
+[Podfile]:        https://guides.cocoapods.org/using/the-podfile.html
