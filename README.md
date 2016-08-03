@@ -215,6 +215,10 @@ NSObject.performInBackground({
 ```
 
 [Logo Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo.png
+{width="200px"}
+
 [Title Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-title.png
+{width="200px"}
+
 [CocoaPods]: https://cocoapods.org
 [Podfile]: https://guides.cocoapods.org/using/the-podfile.html
