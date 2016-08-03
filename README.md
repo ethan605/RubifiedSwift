@@ -1,6 +1,4 @@
 ![RubifiedSwift logo][Logo Url] ![RubifiedSwift title][Title Url]
-
-# RubifiedSwift #
 ![Cocoapods version][Version Url] ![Cocoapods platform][Platform Url] ![Documentation completion][Doc Url] ![License: MIT][License Url]
 ### Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations.
 
