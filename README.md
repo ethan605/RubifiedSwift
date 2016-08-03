@@ -1,6 +1,4 @@
 ![RubifiedSwift logo][Logo Url] ![RubifiedSwift title][Title Url]
-
-# RubifiedSwift
 ### Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations.
 
 Inspired by [ObjectiveSugar](https://github.com/supermarin/ObjectiveSugar) & [RubySugar](https://github.com/michalkonturek/RubySugar)
@@ -213,6 +211,12 @@ NSObject.performInBackground({
   print("Perform in foreground")
 }
 ```
+
+## What's next? ##
+
+* Support more Ruby APIs
+* Find a way to re-structure whole project
+* Anyone one who interesting with this project please feel free to open an issue. We'll discuss more detailed.
 
 [Logo Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo-small.png
 [Title Url]: https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-title-small.png
