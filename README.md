@@ -1,4 +1,4 @@
-![RubifiedSwift logo][Logo Url] ![RubifiedSwift title][Title Url]
+![RubifiedSwift logo][Logo Url]
 ![Cocoapods version][Version Url] ![Cocoapods platform][Platform Url] ![Documentation completion][Doc Url] ![License: MIT][License Url]
 ### Bunch of Swift extensions for Number, String, Array, Dictionary... written in Ruby-styled implementations.
 
@@ -219,8 +219,7 @@ NSObject.performInBackground({
 * Find a way to re-structure whole project
 * Anyone one who interesting with this project please feel free to open an issue. We'll discuss more detailed.
 
-[Logo Url]:       https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo-small.png
-[Title Url]:      https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-title-small.png
+[Logo Url]:       https://dl.dropboxusercontent.com/u/44988373/Work/FnFr/RubifiedSwift/RubifiedSwift-logo-horizontal.png
 
 [Version Url]:    https://img.shields.io/cocoapods/v/RubifiedSwift.svg
 [Platform Url]:   https://img.shields.io/cocoapods/p/RubifiedSwift.svg
